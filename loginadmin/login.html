@@ -4,11 +4,28 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Title Page</title>
+		<title>Pagina principal</title>
 
 		<!-- Bootstrap CSS -->
 		<link href="../css/bootstrap.min.css" rel="stylesheet">
-
+		<link href="../css/font-awesome.css" rel="stylesheet">
+		<style type="text/css">
+			#imagen{
+				border-radius: 200px;
+				background: rgba(0,200,50,0.1);
+				height: 20vh;
+			}
+			#login{
+				height: 80vh;
+				border: 1px dashed green;
+				margin-top: 5%
+			}
+			@media(max-width: 500px){
+				#login{
+					margin-top: 0px;
+				}
+			}
+		</style>
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -17,10 +34,19 @@
 		<![endif]-->
 	</head>
 	<body>
-		<h1 class="text-center">Hello World</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4 col-sm-offset-4" id="login">
+					<div class="row">
+						<div class="col-xs-6 col-xs-offset-3" id="imagen"></div>
+					</div>
+					<div class="row"></div>
+				</div>
+			</div>
+		</div>
 
 		<!-- jQuery -->
-		<script src="//code.jquery.com/jquery.js"></script>
+		<script src="../js/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="../js/bootstrap.min.js"></script>
 	</body>
