@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Evaluación</title>
+
+		<!-- Bootstrap CSS -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/font-awesome.css" rel="stylesheet">
+		<link href="../css/side-wraper.css" rel="stylesheet">
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<style type="text/css">
+			.icono_grandes{
+				font-size: 10em !important;
+			}
+			#caja, #izq,#der{
+				height: 100vh;
+			}
+			#iconos_der{
+				height: 70vh;
+			}
+			.caja_izq{
+				margin-top: 30px;
+			}
+			.caja_der{
+				margin-top: 80px;
+			}
+			.submenu{
+				margin-right: 5px;
+			}
+			.navbar{
+				background: #2b78e4;
+			}
+			.navbar a, .navbar h2{
+				color: white !important;
+			}
+			@media(max-width:990px){
+				#izq{
+					display: block;
+				}
+			}
+			.navbar-right{
+				margin-right: 20px;
+			}
+			#icono_user{
+				color: white;
+				margin-top: 10px;
+				font-size: 3em;
+			}
+			h4{
+				color: black !important;
+			}
+			/*colores*/
+			.morado{
+				color: #8e7cc3;
+			}
+			.azul{
+				color: #085394 !important;
+			}
+			.verde{
+				color: #93c47d;
+			}
+			.amarillo{
+				color: #ffd966;
+			}
+			.verde:hover{
+				color: #38761d !important;
+			}
+			.amarillo:hover{
+				color: #bf9000 !important;
+			}
+			.morado:hover{
+				color: #674ea7 !important;
+			}
+			/* centered columns styles */
+			.row-centered {
+			    text-align:center;
+			}
+			.col-centered {
+			    display:inline-block;
+			    float:none;
+			    /* reset the text-align */
+			    text-align:left;
+			    /* inline-block space fix */
+			    margin-right:-4px;
+			}
+			/*Centrar texto*/
+			.texto-center{
+				text-align: center;
+			}
+			/*Boton redondo*/
+			.btn-circle {
+			  width: 30px;
+			  height: 30px;
+			  text-align: center;
+			  padding: 6px 0;
+			  font-size: 12px;
+			  line-height: 1.42;
+			  border-radius: 15px;
+			}
+			.list-group-item-header{
+				background: rgba(0,0,0,0.2) !important;
+				height: 30px !important;
+				font-size: 0.9em;
+			}
+			.list-group-item{
+                height: 60px;
+            }
+            .list-group-item:nth-child(even){
+                background: #95b7db;
+            }
+            .list-group-item:nth-child(odd){
+                background: #989add;
+            }
+		</style>
+	</head>
+	<body>
+	<div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#menu-toggle"  id="menu-toggle" style="text-align: center;">
+                    	<button class="btn btn-primary" >Cerrar</button>
+                    </a>
+                </li>
+                <li>
+                	<a>
+                		<div class="col-xs-12 caja_izq" style="text-align: center"><i class="fa fa-pencil icono_grandes"></i>
+                		<h4 >Evaluacion</h4>
+                		</div>
+                	</a>
+                </li>
+                <li>
+                    <a class="verde">
+                		<div class="col-xs-12 caja_izq" style="text-align: center"><i class="fa fa-users icono_grandes"></i>
+                		<h4 >Empleados</h4>
+                		</div>
+                	</a>
+                </li>
+                <li>
+                    <a class="morado">
+                		<div class="col-xs-12 caja_izq" style="text-align: center"><i class="fa fa-clock-o icono_grandes"></i>
+                		<h4 >Periodo</h4>
+                		</div>
+                	</a>
+                </li>
+                <li>
+                    <a class="amarillo">
+                		<div class="col-xs-12 caja_izq" style="text-align: center"><i class="fa fa-bar-chart icono_grandes"></i>
+                		<h4 >Reportes</h4>
+                		</div>
+                	</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="col-xs-12">
+					<nav class="navbar navbar-default" role="navigation">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" id="mostrar" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="#">logo</a>
+						</div>
+						<ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+							<li>
+								<span class="col-xs-8"><h2>Usuario</h2> </span>
+								<span class="col-xs-4" id="icono_user"><i class="fa fa-user"></i></span>
+							</li>	
+						</ul>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse navbar-ex1-collapse">
+							
+						</div><!-- /.navbar-collapse -->
+					</nav>
+				</div>
+				<div class="row" >
+					<div class="row" id="iconos_der">
+						<div class="row row-centered" style="margin-top: 65px;">
+							<div class="col-xs-8 col-centered">
+								<form class="form-inline texto-center">
+									<div class="form-group">
+										<div class="col-sm-2 hidden-sm hidden-xs"><label style="margin-top: 5px;" for="busqueda">Buscar:</label></div>
+										<div class="col-sm-8"><input type="text" size="40" id="busqueda" class="form-control" placeholder="ingrese texto a buscar"></div>
+										<div class="col-sm-2"><a ><i class="fa fa-plus-circle fa-3x"></i></a></div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="row row-centered" style="margin-top: 65px;">
+							<div class="col-xs-8 col-centered">
+								<ul class="list-group">
+									<li class="list-group-item list-group-item-header">Evaluaciones</li>
+									<li class="list-group-item">
+										Item 1
+										<span class="pull-right">
+		                                    <a ng-click="editPersona({{p}},{{$index}})" class=""><i class="fa fa-pencil fa-3x"></i></a>                                    
+		                                </span>
+									</li>
+									<li class="list-group-item">
+										Item 1
+										<span class="pull-right">
+		                                    <a ng-click="editPersona({{p}},{{$index}})" class=""><i class="fa fa-pencil fa-3x"></i></a>                                    
+		                                </span>
+									</li>
+									<li class="list-group-item">
+										Item 1
+										<span class="pull-right">
+		                                    <a ng-click="editPersona({{p}},{{$index}})" class=""><i class="fa fa-pencil fa-3x"></i></a>                                    
+		                                </span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row row-centered" style="margin-top: 65px;">
+							<div class="col-xs-8 col-centered">
+								<!--
+
+
+
+psdjbhv cbhc b njxz hxcjvbchxvycsgvjibvy8ugbdfjigbfy8v
+
+							-->
+								<div class="col-sm-4 col-sm-offset-4 col-xs-12">
+									<ul class="pagination">
+										<li><a href="#">&laquo;</a></li>
+										<li><a href="#">1</a></li>
+										<li><a href="#">2</a></li>
+										<li><a href="#">3</a></li>
+										<li><a href="#">4</a></li>
+										<li><a href="#">5</a></li>
+										<li><a href="#">&raquo;</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-offset-7 col-sm-5 submenu">
+							<div class="col-xs-6  col-sm-offset-6 col-sm-3 caja_der azul" style="text-align: center"><i class="fa fa-question fa-3x"></i>
+							<h4 >Ayuda</h4>
+							</div>
+							<div class="col-xs-6  col-sm-3 caja_der azul" style="text-align: center"><i class="fa fa-times fa-3x"></i>
+							<h4 >Cerrar</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+		<!-- jQuery -->
+		<script src="../js/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="../js/bootstrap.min.js"></script>
+		<script type="text/javascript" >
+		// accion del boton mostrar del navbar
+			$("#mostrar").click(function(){
+		        $("#wrapper").toggleClass("toggled");
+			});
+			$("#menu-toggle").click(function(e) {
+		        e.preventDefault();
+		        $("#wrapper").toggleClass("toggled");
+		    });
+		</script>
+	</body>
+</html>
