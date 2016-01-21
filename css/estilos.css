@@ -50,24 +50,31 @@
 			/*-------------------------COLORES--------------------------------------------------*/
 			.morado{
 				color: #8e7cc3;
+				text-decoration: none !important;
 			}
 			.azul{
 				color: #085394 !important;
+				text-decoration: none !important;
 			}
 			.verde{
 				color: #93c47d;
+				text-decoration: none !important;
 			}
 			.amarillo{
 				color: #ffd966;
+				text-decoration: none !important;
 			}
 			.verde:hover{
 				color: #38761d !important;
+				text-decoration: none !important;
 			}
 			.amarillo:hover{
 				color: #bf9000 !important;
+				text-decoration: none !important;
 			}
 			.morado:hover{
 				color: #674ea7 !important;
+				text-decoration: none !important;
 			}
 			/*--------------FIN-----------COLORES--------------------------------------------------*/
 
