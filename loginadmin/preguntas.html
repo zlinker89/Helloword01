@@ -100,7 +100,7 @@
 									<div class="form-group">
 										<div class="col-md-2 hidden-sm hidden-xs hidden-md"><label style="margin-top: 5px;" for="busqueda">Buscar:</label></div>
 										<div class="col-sm-8"><input type="text" size="40" id="busqueda" class="form-control" placeholder="ingrese texto a buscar"></div>
-										<div class="col-sm-1 pull-right"><a data-toggle="modal" data-backdrop="static" data-keyboard="false" href='#modal-id'><i class="fa fa-plus-circle fa-3x"></i></a></div>
+										<div class="col-sm-1 pull-right"><a data-toggle="modal" data-backdrop="static" data-keyboard="false" href='#crear-pregunta'><i class="fa fa-plus-circle fa-3x"></i></a></div>
 									</div>
 								</form>
 							</div>
@@ -112,19 +112,19 @@
 									<li class="list-group-item">
 										Item 1
 										<span class="pull-right">
-		                                    <a class=""><i class="fa fa-pencil fa-3x"></i></a>                                    
+		                                    <a data-toggle="modal" data-backdrop="static" data-keyboard="false" href='#modificar-pregunta'><i class="fa fa-pencil fa-3x"></i></a>                                    
 		                                </span>
 									</li>
 									<li class="list-group-item">
 										Item 1
 										<span class="pull-right">
-		                                    <a class=""><i class="fa fa-pencil fa-3x"></i></a>                                    
+		                                    <a data-toggle="modal" data-backdrop="static" data-keyboard="false" href='#modificar-pregunta'><i class="fa fa-pencil fa-3x"></i></a>                                    
 		                                </span>
 									</li>
 									<li class="list-group-item">
 										Item 1
 										<span class="pull-right">
-		                                    <a class=""><i class="fa fa-pencil fa-3x"></i></a>                                    
+		                                    <a data-toggle="modal" data-backdrop="static" data-keyboard="false" href='#modificar-pregunta'><i class="fa fa-pencil fa-3x"></i></a>                                    
 		                                </span>
 									</li>
 								</ul>
@@ -181,12 +181,12 @@
 	</body>
 </html>
 
-<div class="modal fade" id="modal-id">
+<div class="modal fade" id="crear-pregunta">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-2x azul"></i></button>
-				<h4 class="modal-title"></h4>
+				<h4 class="modal-title">Crear pregunta</h4>
 			</div>
 			<div class="modal-body">
 				<div class="row">
@@ -207,6 +207,42 @@
 								<br>
 							</div>
 							<div class="col-sm-12 separar" id="respuestas">
+								<!--AQUI SE CARGA LA LISTA DE INPUTS-->
+							</div>
+							<div class="col-sm-3 col-sm-offset-5 separar"><button type="button" ng-click="AddPregunta()" class="btn btn-primary">Registrar</button></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="modificar-pregunta">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-2x azul"></i></button>
+				<h4 class="modal-title">Modificar pregunta</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-12" ng-controller="UpdatePreguntaController">
+						<form>
+							<div class="col-sm-12 separar">
+								<div class="form-group">
+									<label for="preguntas" class="col-sm-2 control-label">Pregunta:</label>
+									<div class="col-sm-10">
+										<textarea ng-model="upregunta" id="upreguntas" class="form-control" rows="3" required="required"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<h4>Respuestas:</h4>
+								<a class="btn btn-primary" ng-click="AddRespuesta()"><i class="fa fa-plus-circle fa-3x"></i></a>
+								<br>
+								<br>
+							</div>
+							<div class="col-sm-12 separar"  id="urespuestas">
 								<!--AQUI SE CARGA LA LISTA DE INPUTS-->
 							</div>
 							<div class="col-sm-3 col-sm-offset-5 separar"><button type="button" ng-click="AddPregunta()" class="btn btn-primary">Registrar</button></div>
