@@ -1,0 +1,143 @@
+			/*-------------------------ICONOS--------------------------------------------------*/
+			.icono_grandes{
+				font-size: 8em !important;
+			}
+			#icono_user{
+				color: white;
+				margin-top: 10px;
+				font-size: 3em;
+			}
+			#iconos_der{
+				height: 70vh;
+			}
+			/*-------------FIN------------ICONOS--------------------------------------------------*/
+
+			/*-------------------------CAJAS--------------------------------------------------*/
+			#caja, #izq,#der{
+				height: 100vh;
+			}
+			
+			.caja_izq{
+				margin-top: 30px;
+			}
+			.caja_der{
+				margin-top: 80px;
+			}
+			/*--------------FIN-----------CAJAS--------------------------------------------------*/
+
+			/*-------------------------MENUS--------------------------------------------------*/
+			.submenu{
+				margin-right: 5px;
+			}
+			.navbar h2{
+				color: white !important;
+			}
+			#menu{
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				left: 14px;
+			}
+			.navbar-right{
+				margin-right: 20px;
+			}
+			/*--------------FIN-----------MENUS--------------------------------------------------*/
+
+
+			/*-------------------------COLORES--------------------------------------------------*/
+			.morado{
+				color: #8e7cc3;
+			}
+			.azul{
+				color: #085394 !important;
+			}
+			.verde{
+				color: #93c47d;
+			}
+			.amarillo{
+				color: #ffd966;
+			}
+			.verde:hover{
+				color: #38761d !important;
+			}
+			.amarillo:hover{
+				color: #bf9000 !important;
+			}
+			.morado:hover{
+				color: #674ea7 !important;
+			}
+			/*--------------FIN-----------COLORES--------------------------------------------------*/
+
+			/*-------------------------CENTRAR DIVS--------------------------------------------------*/
+			.row-centered {
+			    text-align:center;
+			}
+			.col-centered {
+			    display:inline-block;
+			    float:none;
+			    /* reset the text-align */
+			    text-align:left;
+			    /* inline-block space fix */
+			    margin-right:-4px;
+			}
+			.centrar_div{
+				width: 40%;
+				margin: 0 auto;
+			}
+			/*--------------FIN-----------CENTRAR DIVS--------------------------------------------------*/
+
+			/*-------------------------LISTAS--------------------------------------------------*/
+			.list-group-item-header{
+				background: rgba(0,0,0,0.2) !important;
+				height: 30px !important;
+				font-size: 0.9em;
+			}
+			.list-group-item{
+                height: 60px;
+            }
+            .list-group-item:nth-child(even){
+                background: #eeeeee;
+            }
+            .list-group-item:nth-child(odd){
+                background: #dddddd;
+            }
+			/*--------------FIN-----------LISTAS--------------------------------------------------*/
+
+			/*-------------------------TEXTOS--------------------------------------------------*/
+			h4{
+				color: black !important;
+			}
+			/*--------------FIN-----------TEXTOS--------------------------------------------------*/
+
+			/*-------------------------RESPONSIVE--------------------------------------------------*/
+			@media(max-width:990px){
+				#izq{
+					display: block;
+				}
+				.centrar_div{
+					width: 80%;
+				}
+			}
+			/*--------------FIN-----------RESPONSIVE--------------------------------------------------*/
+			
+			
+			
+			
+			
+			/*Centrar texto*/
+			.texto-center{
+				text-align: center;
+			}
+			/*Boton redondo*/
+			.btn-circle {
+			  width: 30px;
+			  height: 30px;
+			  text-align: center;
+			  padding: 6px 0;
+			  font-size: 12px;
+			  line-height: 1.42;
+			  border-radius: 15px;
+			}
+			
+            
+            

@@ -10,6 +10,9 @@
 		<link href="../css/bootstrap.min.css" rel="stylesheet">
 		<link href="../css/font-awesome.css" rel="stylesheet">
 		<link href="../css/side-wraper.css" rel="stylesheet">
+		<!--Mis estilos-->
+		<link href="../css/estilos.css" rel="stylesheet">
+		<link href="../css/menu.css" rel="stylesheet">
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,123 +20,7 @@
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
-		<style type="text/css">
-			.icono_grandes{
-				font-size: 8em !important;
-			}
-			#caja, #izq,#der{
-				height: 100vh;
-			}
-			#iconos_der{
-				height: 70vh;
-			}
-			.caja_izq{
-				margin-top: 30px;
-			}
-			.caja_der{
-				margin-top: 80px;
-			}
-			.submenu{
-				margin-right: 5px;
-			}
-			.navbar{
-				background: #2b78e4;
-			}
-			.navbar a, .navbar h2{
-				color: white !important;
-			}
-			#menu{
-				position: absolute;
-				top: 0;
-				right: 0;
-				left: 0;
-			}
-			.navbar-right{
-				margin-right: 20px;
-			}
-			#icono_user{
-				color: white;
-				margin-top: 10px;
-				font-size: 3em;
-			}
-			h4{
-				color: black !important;
-			}
-			/*colores*/
-			.morado{
-				color: #8e7cc3;
-			}
-			.azul{
-				color: #085394 !important;
-			}
-			.verde{
-				color: #93c47d;
-			}
-			.amarillo{
-				color: #ffd966;
-			}
-			.verde:hover{
-				color: #38761d !important;
-			}
-			.amarillo:hover{
-				color: #bf9000 !important;
-			}
-			.morado:hover{
-				color: #674ea7 !important;
-			}
-			/* centered columns styles */
-			.row-centered {
-			    text-align:center;
-			}
-			.col-centered {
-			    display:inline-block;
-			    float:none;
-			    /* reset the text-align */
-			    text-align:left;
-			    /* inline-block space fix */
-			    margin-right:-4px;
-			}
-			/*Centrar texto*/
-			.texto-center{
-				text-align: center;
-			}
-			/*Boton redondo*/
-			.btn-circle {
-			  width: 30px;
-			  height: 30px;
-			  text-align: center;
-			  padding: 6px 0;
-			  font-size: 12px;
-			  line-height: 1.42;
-			  border-radius: 15px;
-			}
-			.list-group-item-header{
-				background: rgba(0,0,0,0.2) !important;
-				height: 30px !important;
-				font-size: 0.9em;
-			}
-			.list-group-item{
-                height: 60px;
-            }
-            .list-group-item:nth-child(even){
-                background: #eeeeee;
-            }
-            .list-group-item:nth-child(odd){
-                background: #dddddd;
-            }
-            .centrar_div{
-            	width: 40%;
-            	margin: 0 auto;
-            }
-            @media(max-width:990px){
-				#izq{
-					display: block;
-				}
-				.centrar_div{
-					width: 80%;
-				}
-			}
-		</style>
+		
 	</head>
 	<body>
 	<div id="wrapper">
@@ -185,7 +72,7 @@
 					<nav class="navbar navbar-default" role="navigation">
 						<!-- Brand and toggle get grouped for better mobile display -->
 						<div class="navbar-header">
-							<button type="button" id="mostrar" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+							<button type="button" id="mostrar" class="navbar-toggle pull-left menu_responsive" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 								<span class="sr-only">Toggle navigation</span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
