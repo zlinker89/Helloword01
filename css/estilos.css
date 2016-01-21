@@ -48,6 +48,9 @@
 
 
 			/*-------------------------COLORES--------------------------------------------------*/
+			.purple{
+				background: #b4a7d6 !important;
+ 			}
 			.morado{
 				color: #8e7cc3;
 				text-decoration: none !important;
