@@ -143,12 +143,15 @@
 									</div>
 								</div>
 							</a>
+							<br>
+							<a data-toggle="modal" href='#notificaciones'>
 							<div class="col-sm-4 caja_der morado" style="text-align: center">
 								<div class="row">
 									<i class="fa fa-bell-o icono_grandes"></i>
 									<h4 >Notificaciones</h4>
 								</div>
 							</div>
+							</a>
 								
 					</div>
 					<div class="row">
@@ -189,17 +192,72 @@
 	</body>
 </html>
 
+	<!--Aqui comienza el modal notificaciones-->
+
+<div class="modal" id="notificaciones" data-keyboard="false" data-backdrop>
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title"></h4>
+			</div>
+			<div class="modal-body">
+				<div class="row" >
+						<div class="col-sm-8 col-sm-offset-2">
+							<div style="text-align: center;">
+								<h3>NOTIFICACIONES</h3>
+								<br>
+							</div>
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th >Nombre de Evaluación</th>
+										<th style="text-align: center;" colspan="">Estado</th>
+										<th style="text-align: center;">Notificaciones</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Evaluación 1</td>
+										<td style="text-align: center;"><i class="fa fa-toggle-on fa-2x"></i></td>
+										<td style="text-align: center;"> <a data-toggle="modal" href=''><i class="fa fa-bell-o fa-2x"></i></a></td>
+									</tr>
+									<tr>
+										<td >Evaluación 2</td>
+										<td style="text-align: center;" ><i class="fa fa-toggle-on fa-2x"></i></td>
+										<td style="text-align: center;"><a data-toggle="modal" href='#'><i class="fa fa-bell-o fa-2x"></i></td>
+									</tr>
+									<tr>
+										<td>Evaluación 3</td>
+										<td style="text-align: center;"><i class="fa fa-toggle-on fa-2x"></i></td>
+										<td style="text-align: center;"><a data-toggle="modal" href='#'><i class="fa fa-bell-o fa-2x"></i></td>
+									</tr>
+
+								</tbody>
+							</table>	
+							<div class="row">
+									<div class="col-sm-8">
+										<p style="background: #dddddd; text-align: justify; padding: 3px;">
+											Recuerde  selecionar y guardar antes de salir  asigneles el grupo de empleado en el icono listar empleados para que se les notifique a los  empleados si tiene alguna duda el boton de ayuda de la parte inferior del sistema lo ayuda
+										</p>
+									</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <!-- Aqui comienza el modal de editar periodo-->
 
-<div class="modal fade" id="editarperiodo" data-keyboard="false" data-backdrop>
+<div class="modal" id="editarperiodo" data-keyboard="false" data-backdrop>
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title"></h4>
 				</div>
-				<!--  Aqui comienza el modal-->
 				<div class="modal-body">
 					<form>
 						<div class="row">
@@ -259,14 +317,13 @@
 	</div>
 
 	<!-- Aqui comienza el modal empleado-->
-	<div class="modal fade" id="empleados" data-keyboard="false" data-backdrop>
+	<div class="modal" id="empleados" data-keyboard="false" data-backdrop>
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title"></h4>
 				</div>
-				<!--  Aqui comienza el modal-->
 				<div class="modal-body">
 					<form>
 						<div class="row">
@@ -284,9 +341,14 @@
 							<div class="col-sm-7">
 								<input type="text" class="form-control" id="" placeholder="">
 							</div>
+
+
 							<!-- Esta es la primera tabla-->
 							<table class="table table-hover">
 								<thead>
+								<div class="col-sm-12">
+									<h4>Pares <i class="fa fa-plus-circle fa-2x morado"></i></h4>
+								</div>
 									<tr>
 										<th>Identificacion</th>
 										<th style="text-align: center;" colspan="">Nombre</th>
@@ -306,6 +368,9 @@
 
 							<table class="table table-hover">
 								<thead>
+								<div class="col-sm-12">
+									<h4>Pares <i class="fa fa-plus-circle fa-2x morado"></i></h4>
+								</div>
 									<tr>
 										<th>Identificacion</th>
 										<th style="text-align: center;" colspan="">Nombre</th>
@@ -334,3 +399,4 @@
 		</div>
 	</div>
 	
+
