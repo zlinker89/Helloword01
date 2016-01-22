@@ -24,6 +24,13 @@
 			.submenu{
 				transform:translate(-35px,-55px) !important;
 			}
+			.pregunta{
+				padding: 1% 5% 1% 5%
+			}
+			.add-on{
+				position: absolute;
+				transform:translate(-18px,3px) !important;
+			}
 			@media(max-width: 940px){
 				.submenu{
 					transform:translate(0px,-55px) !important;
@@ -109,7 +116,43 @@
 				<div class="row" >
 					<div class="row">
 						<div class="row" id="iconos_der">
-							
+							<div ng-controller="preguntaList" class="col-sm-12 caja_der pregunta">
+								<script type="text/javascript">
+								        var sortingOrder = 'name';
+								    </script>
+								          <!--
+								            <div class="input-append">
+								                <input type="text" ng-model="query" ng-change="search()" class="input-large search-query" placeholder="Search">
+								            	<span class="add-on"><i class="fa fa-search"></i></span>
+								            </div>
+								            -->   
+						                    <div ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse" class="col-sm-12">
+						                        <p>{{item.pregunta}}</p>
+						                        <ul ng-repeat="r in item.respuestas">
+						                        	<li>{{r.respuesta}}</li>
+						                        </ul>
+						                    </div>
+								            <div class="col-sm-12">
+							                    <td colspan="6">
+							                    	
+							                        <div class="col-sm-4 col-sm-offset-4">
+							                        	<ul class="pagination">
+								                    		<li ng-class="{disabled: currentPage == 0}">
+							                                    <a href ng-click="prevPage()">« Anterior</a>
+							                                </li>
+							                                <li ng-repeat="n in range(pagedItems.length)"
+							                                    ng-class="{active: n == currentPage}"
+							                                ng-click="setPage()">
+							                                    <a href ng-bind="n + 1">1</a>
+							                                </li>
+							                                <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+							                                    <a href ng-click="nextPage()">Siguiente »</a>
+							                                </li>
+								                    	</ul>
+							                        </div>
+							                    </td>
+							                </div>
+							</div>
 						</div>
 						<div class="row">
 							<div class="col-xs-12 col-sm-offset-7 col-sm-5 submenu">
@@ -140,7 +183,7 @@
 		<script src="../js/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/angular.min.js"></script>
+		<script src="../js/angular1.min.js"></script>
 		<script src="../js/app.js"></script>
 		<script type="text/javascript" >
 		// accion del boton mostrar del navbar
@@ -154,3 +197,122 @@
 		</script>
 	</body>
 </html>
+<script type="text/javascript">
+	// valor temporal
+	var preguntalst = [
+		{pregunta: "Contribuye a generar una cultura orientada al logro de resultados velando por mantener la efectividad de los procesos." },
+		{pregunta: "Alinea sus propios planes de trabajo con las metas del área e identifica recursos y planes de acción realistas y necesarios a corto, mediano y largo plazo. " },
+		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  " },
+		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  " }
+	];
+	miApp.controller("preguntaList", function($scope, $filter){
+		// init
+		$scope.sortingOrder = sortingOrder;
+		$scope.reverse = false;
+		$scope.filteredItems = [];
+		$scope.groupedItems = [];
+		$scope.itemsPerPage = 1;
+		$scope.pagedItems = [];
+		$scope.currentPage = 0;
+		$scope.items = [
+		    {pregunta: "Contribuye a generar una cultura orientada al logro de resultados velando por mantener la efectividad de los procesos.", respuestas:[
+			{respuesta: "CASI NUNCA"},
+			{respuesta: "EN POCAS OCASIONES"},
+			{respuesta: "NORMALMENTE"},
+			{respuesta: "CON FRECUENCIA"},
+			{respuesta: "SIEMPRE"}
+		]},
+			{pregunta: "Alinea sus propios planes de trabajo con las metas del área e identifica recursos y planes de acción realistas y necesarios a corto, mediano y largo plazo. ", respuestas:[
+			{respuesta: "CASI NUNCA"},
+			{respuesta: "EN POCAS OCASIONES"},
+			{respuesta: "NORMALMENTE"},
+			{respuesta: "CON FRECUENCIA"},
+			{respuesta: "SIEMPRE"}
+		] },
+			{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
+			{respuesta: "CASI NUNCA"},
+			{respuesta: "EN POCAS OCASIONES"},
+			{respuesta: "NORMALMENTE"},
+			{respuesta: "CON FRECUENCIA"},
+			{respuesta: "SIEMPRE"}
+		] },
+			{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
+			{respuesta: "CASI NUNCA"},
+			{respuesta: "EN POCAS OCASIONES"},
+			{respuesta: "NORMALMENTE"},
+			{respuesta: "CON FRECUENCIA"},
+			{respuesta: "SIEMPRE"}
+		]}];
+
+		var searchMatch = function (haystack, needle) {
+		    if (!needle) {
+		        return true;
+		    }
+		    return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
+		};
+
+		// init the filtered items
+		$scope.search = function () {
+		    $scope.filteredItems = $filter('filter')($scope.items, function (item) {
+		        for(var attr in item) {
+		            if (searchMatch(item[attr], $scope.query))
+		                return true;
+		        }
+		        return false;
+		    });
+		    // take care of the sorting order
+		    if ($scope.sortingOrder !== '') {
+		        $scope.filteredItems = $filter('orderBy')($scope.filteredItems, $scope.sortingOrder, $scope.reverse);
+		    }
+		    $scope.currentPage = 0;
+		    // now group by pages
+		    $scope.groupToPages();
+		};
+		
+		// calculate page in place
+		$scope.groupToPages = function () {
+		    $scope.pagedItems = [];
+		    
+		    for (var i = 0; i < $scope.filteredItems.length; i++) {
+		        if (i % $scope.itemsPerPage === 0) {
+		            $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)] = [ $scope.filteredItems[i] ];
+		        } else {
+		            $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)].push($scope.filteredItems[i]);
+		        }
+		    }
+		};
+		
+		$scope.range = function (start, end) {
+		    var ret = [];
+		    if (!end) {
+		        end = start;
+		        start = 0;
+		    }
+		    for (var i = start; i < end; i++) {
+		        ret.push(i);
+		    }
+		    return ret;
+		};
+		
+		$scope.prevPage = function () {
+		    if ($scope.currentPage > 0) {
+		        $scope.currentPage--;
+		    }
+		};
+		
+		$scope.nextPage = function () {
+		    if ($scope.currentPage < $scope.pagedItems.length - 1) {
+		        $scope.currentPage++;
+		    }
+		};
+		
+		$scope.setPage = function () {
+		    $scope.currentPage = this.n;
+		};
+
+		// functions have been describe process the data for display
+		$scope.search();
+
+		
+	});
+</script>

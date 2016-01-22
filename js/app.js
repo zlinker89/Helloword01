@@ -3,7 +3,9 @@ var contador_respuestas = 1;
 // Inicializamos las ´respuestas
 var myEl = angular.element( document.querySelector( '#respuestas' ) );
 myEl.prepend('<div class="col-sm-12"><input type="text" placeholder="Respuesta '+ contador_respuestas +'" class="form-control respuestas"></div>');
+// esto estara visible en mis apps
 var miApp = angular.module("preguntas",[]);
+
 miApp.controller('PreguntaController' ,function($scope){
 	$scope.AddRespuesta = function() {
 		if(contador_respuestas <= 10){
