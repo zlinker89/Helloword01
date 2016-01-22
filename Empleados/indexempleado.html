@@ -78,6 +78,7 @@
                         <button class="btn btn-primary" >Cerrar</button>
                     </a>
                 </li>
+                <!-- Iconos del menu -->
                 <li>
                     <a>
                         <div class="col-xs-12 caja_izq" style="text-align: center"><i class="fa fa-pencil icono_grandes"></i>
@@ -139,20 +140,26 @@
                 </div>
                 <div class="row" >
                     <div class="row" id="iconos_der">
+                        <a href="#ventana1" data-toggle="modal">
                             <div class="col-xs-6 col-sm-3 caja_der morado" style="text-align: center"><i class="fa fa-upload icono_grandes"></i>
-                            <h4 >Subir lista de empleados</h4>
+                                <h4 >Subir lista de empleados</h4>
                             </div>
-                            <div class="col-xs-6 col-sm-3 caja_der morado" style="text-align: center"><i class="fa fa-th-list icono_grandes  "></i>
-                            <h4 >Lista de empleados</h4>
+                        </a>
+
+                        <a href="#ventana2" data-toggle="modal">
+                            <div class="col-xs-6 col-sm-3 caja_der morado" style="text-align: center"><i class="fa fa-list icono_grandes"></i>
+                                <h4 >Lista de empleados</h4>
                             </div>
+                        </a>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-offset-7 col-sm-5 submenu">
                             <div class="col-xs-6  col-sm-offset-6 col-sm-3 caja_der azul" style="text-align: center"><i class="fa fa-question fa-3x"></i>
-                            <h4 >Ayuda</h4>
+                                <h4 >Ayuda</h4>
                             </div>
+
                             <div class="col-xs-6  col-sm-3 caja_der azul" style="text-align: center"><i class="fa fa-times fa-3x"></i>
-                            <h4 >Cerrar</h4>
+                                <h4 >Cerrar</h4>
                             </div>
                         </div>
                     </div>
@@ -160,42 +167,102 @@
             </div>
         </div>
         <!-- /#page-content-wrapper -->
-
     </div>
-    <!-- /#wrapper -->
-        <!-- <div class="row" id="caja">
-            <div class="col-xs-2" id="izq">
 
-                    <div class="col-xs-4 col-xs-offset-4" style="text-align: center;">
-                        <div class="row caja_izq">
-                            <i class="fa fa-check-square icono_grandes"></i>
-                            <h4>aaaaaaaaaa</h4>
+
+    <!-- Modal -->
+
+    <div class="modal fade bs-ventana1-modal-lg" id="ventana1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!--  header de la ventana-->
+                    <div class="modal-header">
+                        <button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Subir lista de empleado</h4>
+                    </div>
+                <!-- contenido de la ventana-->
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class="col-xs-12 col-md-3">
+                            <label>Seleccione el archivo que desee subir</label>
+                        </div>
+
+                        <div class="col-xs-12 col-md-8">
+                            <input type="text" class="form-control"> </input>
+                        </div>
+
+               
+                        <div class="col-xs-12 col-md-1" type="file">
+                            <a href="#ventana1" data-toggle="modal" style="color: #93c47d;" >
+                                    <div style="padding:5px;" class="col-xs-12"><i class="fa fa-folder-open fa-2x" ></i></div>
+                            </a>
                         </div>
                     </div>
-                    <div class="col-xs-4 col-xs-offset-4" style="text-align: center;">
-                        <div class="row caja_izq">
-                            <i class="fa fa-check-square icono_grandes"></i>
-                            <h4>aaaaaaaaaa</h4>
+                    <br>
+                 <!-- Barra de progreso -->
+
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                    <span class="sr-only">40% Complete (success)</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xs-4 col-xs-offset-4" style="text-align: center;">
-                        <div class="row caja_izq">
-                            <i class="fa fa-check-square icono_grandes"></i>
-                            <h4>aaaaaaaaaa</h4>
-                        </div>
+                <!-- footer de la ventana-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Guardar</button>
+
                     </div>
-                    <div class="col-xs-4 col-xs-offset-4" style="text-align: center;">
-                        <div class="row caja_izq">
-                            <i class="fa fa-check-square icono_grandes"></i>
-                            <h4>aaaaaaaaaa</h4>
-                        </div>
-                    </div>
-            </div>
-            <div class="col-xs-10" id="der">
-                
+                </div>
             </div>
         </div>
- -->
+
+
+     </div>  <!--  fin Modal -->
+    
+
+      <!--  Modal 2-->
+
+            <!-- esta es la parte del modal -->
+         <div class="modal fade bs-ventana2-modal-lg" id="ventana2">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!--  header de la ventana-->
+                    <div class="modal-header">
+                        <button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">lista de empleado</h4>
+                    </div>
+                <!-- contenido de la ventana-->
+                <div class="modal-body">
+                    <div class="row">
+                         <div class="col-xs-6 col-sm-6 col-md-6">
+                             <a style="color: #93c47d;">
+                                <div class="col-xs-12 caja_der" style="text-align: center"><i class="fa fa-list icono_grandes"></i>
+                                <h4 > lista de empleados Empleados</h4>
+                                </div>
+                         </div>
+
+                          <div class="col-xs-6 col-sm-6 col-md-6">
+                            <a style="color: #93c47d;">
+                                <div class="col-xs-12 caja_der" style="text-align: center"><i class="fa fa-plus-circle icono_grandes"></i>
+                                <h4 > agregar Empleados</h4>
+                                </div>
+                            </a>
+                         </div>
+                     </div>
+                     <br>
+                <!-- footer de la ventana-->
+                    <div class="modal-footer">
+                       <br>
+                </div>
+            </div>
+        </div>
+
+
+      <!--   fin Modal 2-->
 
         <!-- jQuery -->
         <script src="../js/jquery.js"></script>
