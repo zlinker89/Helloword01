@@ -141,6 +141,17 @@
 			h4{
 				color: black;
 			}
+			.textos{
+				/*evaluaciones empleados*/
+				font-size: 2vh;
+				margin-top: 8%;
+				text-align: justify;
+				padding: 3% 8% 0% 8%;
+			}
+			.textos ol{
+				/*evaluaciones empleados*/
+				font-weight:bold;
+			}
 			/*--------------FIN-----------TEXTOS--------------------------------------------------*/
 
 			/*-------------------------RESPONSIVE--------------------------------------------------*/
