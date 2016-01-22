@@ -160,6 +160,10 @@
 			.lista2 .list-group-item:nth-child(odd){
 			    background: #b4a7d6;
 			}
+			.list-group a:hover{
+				box-shadow:0px 0px 45px #666 inset !important;
+				font-weight: bold;
+			}
 			/*--------------FIN-----------LISTAS--------------------------------------------------*/
 
 			/*-------------------------TEXTOS--------------------------------------------------*/
