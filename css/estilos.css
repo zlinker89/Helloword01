@@ -135,6 +135,31 @@
             .list-group-item:nth-child(odd){
                 background: #dddddd;
             }
+            /*LISTAS de competencias*/
+            .lista1 .list-group-item-header{
+				background: #6aa84f !important;
+				height: 40px !important;
+				color: white;
+				font-size: 1.3em;
+			}
+			.lista1 .list-group-item:nth-child(even){
+			    background: #eee;
+			}
+			.lista1 .list-group-item:nth-child(odd){
+			    background: #93c47d;
+			}
+			.lista2 .list-group-item-header{
+				background: #674ea7 !important;
+				height: 40px !important;
+				color: white;
+				font-size: 1.3em;
+			}
+			.lista2 .list-group-item:nth-child(even){
+			    background: #eee;
+			}
+			.lista2 .list-group-item:nth-child(odd){
+			    background: #b4a7d6;
+			}
 			/*--------------FIN-----------LISTAS--------------------------------------------------*/
 
 			/*-------------------------TEXTOS--------------------------------------------------*/
