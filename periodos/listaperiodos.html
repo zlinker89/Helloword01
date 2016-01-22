@@ -27,6 +27,9 @@
 			table tbody tr:nth-child(even), table thead tr:nth-child(odd){
 				background: #b4a7d6 !important;
 			}
+			.alineacion{
+				margin-left: 15px;
+			}
 		</style>
 	</head>
 	<body class="modal-open">
@@ -209,6 +212,45 @@
     
 </script>
 </html>
+
+<!-- Aqui empieza el modal enviar notificaciones-->
+<div class="modal" id="enviarnotificaciones" data-keyboard="false" data-backdrop>
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title"> NOTIFICACIONES</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row alineacion">
+					<h5> Generar notificaciones</h5>
+					<div class="col-sm-12">
+						<span class="col-sm-4"><label for="">Evaluación: </label></span>
+						<span class="col-sm-offset-2 col-sm-6"><i class="fa fa-toggle-on fa-2x"></i></span>
+					</div>
+					<br>
+					<br>
+					<div class="col-sm-4">
+						<label for="">Tamaño de la muestra: </label>
+					</div>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="" placeholder="1000">
+					</div>
+				</div>
+				<br>
+				<br>
+				<div class="progress">
+  					<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%",>
+   					<span class="sr-only">45% Complete</span>
+  					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<!-- Aqui empieza el modal notificaciones-->
 <div class="modal" id="notificaciones"  ng-controller="controlador1" data-keyboard="false" data-backdrop>
     	<div class="modal-dialog modal-lg">
     		<div class="modal-content">
@@ -262,7 +304,9 @@
     								   <ul class="list-group">
     									   	<li class="list-group-item">
     									   		<label for="usr">Evaluacion 1 </label>
-    									   		<span  class="pull-right"><button type="button" class="btn btn-primary">Enviar notificaciones</button></span>
+    									   		<a data-toggle="modal" href='#enviarnotificaciones'>
+    									   		<span  class="pull-right"><button type="button" data-dismiss="modal" class="btn btn-primary">Enviar notificaciones</button></span>
+    									   		</a>
     									   	</li>
     								   </ul>
     								</div>
