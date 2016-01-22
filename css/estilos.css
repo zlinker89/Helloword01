@@ -44,6 +44,10 @@
 			.navbar-right{
 				margin-right: 20px;
 			}
+			.icon-menu{
+				/*menu de empleados evaluacion*/
+				margin-top: 15% !important;
+			}
 			/*--------------FIN-----------MENUS--------------------------------------------------*/
 
 
@@ -67,6 +71,11 @@
 				color: #ffd966;
 				text-decoration: none !important;
 			}
+			.blanco{
+				color: white;
+				text-decoration: none !important;
+			}
+			/*HOVER*/
 			.verde:hover{
 				color: #38761d !important;
 				text-decoration: none !important;
@@ -97,6 +106,12 @@
 				width: 40%;
 				margin: 0 auto;
 			}
+			.centrar-icons{
+				/*iconos de evaluacion empleados*/
+				width: 80%;
+				margin: 0 auto;
+				text-align: center !important;
+			}
 			/*--------------FIN-----------CENTRAR DIVS--------------------------------------------------*/
 
 			/*-------------------------LISTAS--------------------------------------------------*/
@@ -118,7 +133,7 @@
 
 			/*-------------------------TEXTOS--------------------------------------------------*/
 			h4{
-				color: black !important;
+				color: black;
 			}
 			/*--------------FIN-----------TEXTOS--------------------------------------------------*/
 
@@ -130,9 +145,34 @@
 				.centrar_div{
 					width: 80%;
 				}
+				.centrar-icons{
+					width: 100%;
+					margin: 0 auto;
+					text-align: center !important;
+				}
+				.icon-menu{
+					/*menu de empleados evaluacion*/
+					margin-top: 25% !important;
+				}
 			}
 			/*--------------FIN-----------RESPONSIVE--------------------------------------------------*/
 			
+			/*-------------------------IMAGENES--------------------------------------------------*/
+			#img-logo{
+				width: 15vw;
+				height: 15vw;
+				margin: 0 auto;
+				border-radius: 100vw;
+				border: 1px solid black;
+			}
+			#img-fondo{
+				background: url(../img/tablero.png);
+				background-size: 95% 92%;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			/*--------------FIN-----------IMAGENES--------------------------------------------------*/
+
 			
 			
 			
