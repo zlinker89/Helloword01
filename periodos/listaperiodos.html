@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="miApp">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -174,11 +174,14 @@
 
     </div>
     <!-- /#wrapper -->
+    	<!--Aqui comienza el modal notificaciones-->
 
+    
 		<!-- jQuery -->
 		<script src="../js/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/angular.min.js"></script>
 		<script type="text/javascript" >
 		// accion del boton mostrar del navbar
 			$("#mostrar").click(function(){
@@ -190,120 +193,87 @@
 		    });
 		</script>
 	</body>
+	<script>
+    var miAplicacion = angular.module ("miApp",[])
+    miAplicacion.controller ("controlador1", function($scope){
+
+            $scope.periodosnotificaciones = function(){
+                $scope.bandera = true;
+                $scope.h = "hola";
+
+            };
+            
+         
+    });
+    
+    
+</script>
 </html>
+<div class="modal" id="notificaciones"  ng-controller="controlador1" data-keyboard="false" data-backdrop>
+    	<div class="modal-dialog modal-lg">
+    		<div class="modal-content">
+    			<div class="modal-header">
+    				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    				<h4 class="modal-title"></h4>
+    			</div>
+    			<div class="modal-body">
+    				<div class="row" >
+    						<div class="col-sm-8 col-sm-offset-2">
+    							<div style="text-align: center;">
+    								<h3>NOTIFICACIONES</h3>
+    								<br>
+    							</div>
+    							<table class="table table-hover">
+    								<thead>
+    									<tr>
+    										<th >Nombre de Evaluación</th>
+    										<th style="text-align: center;" colspan="">Estado</th>
+    										<th style="text-align: center;">Notificaciones</th>
+    									</tr>
+    								</thead>
+    								<tbody>
+    									<tr>
+    										<td>Evaluación 1</td>
+    										<td style="text-align: center;"><i class="fa fa-toggle-on fa-2x"></i></td>
+    										<td style="text-align: center;"><a href='#'><i ng-click='periodosnotificaciones()' class="fa fa-bell-o fa-2x"></i></a>
+    										</td>
+    									</tr>
+    									<tr>
+    										<td >Evaluación 2</td>
+    										<td style="text-align: center;" ><i class="fa fa-toggle-on fa-2x"></i></td>
+    										<td style="text-align: center;"><a href='#'><i ng-click='periodosnotificaciones()' class="fa fa-bell-o fa-2x"></i></td>
+    									</tr>
+    									<tr>
+    										<td>Evaluación 3</td>
+    										<td style="text-align: center;"><i class="fa fa-toggle-on fa-2x"></i></td>
+    										<td style="text-align: center;"><a href='#'><i ng-click='periodosnotificaciones()' class="fa fa-bell-o fa-2x"></i></td>
+    									</tr>
 
-	<!--Aqui comienza el modal notificaciones-->
-
-<div class="modal" id="notificaciones" data-keyboard="false" data-backdrop>
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title"></h4>
-			</div>
-			<div class="modal-body">
-				<div class="row" >
-						<div class="col-sm-8 col-sm-offset-2">
-							<div style="text-align: center;">
-								<h3>NOTIFICACIONES</h3>
-								<br>
-							</div>
-							<table class="table table-hover">
-								<thead>
-									<tr>
-										<th >Nombre de Evaluación</th>
-										<th style="text-align: center;" colspan="">Estado</th>
-										<th style="text-align: center;">Notificaciones</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Evaluación 1</td>
-										<td style="text-align: center;"><i class="fa fa-toggle-on fa-2x"></i></td>
-										<td style="text-align: center;"> <a data-toggle="modal" href='editarnotificaciones'><i class="fa fa-bell-o fa-2x"></i></a></td>
-									</tr>
-									<tr>
-										<td >Evaluación 2</td>
-										<td style="text-align: center;" ><i class="fa fa-toggle-on fa-2x"></i></td>
-										<td style="text-align: center;"><a data-toggle="modal" href='editarnotificaciones'><i class="fa fa-bell-o fa-2x"></i></td>
-									</tr>
-									<tr>
-										<td>Evaluación 3</td>
-										<td style="text-align: center;"><i class="fa fa-toggle-on fa-2x"></i></td>
-										<td style="text-align: center;"><a data-toggle="modal" href='editarnotificaciones'><i class="fa fa-bell-o fa-2x"></i></td>
-									</tr>
-
-								</tbody>
-							</table>	
-							<div class="row">
-									<div class="col-sm-8">
-										<p style="background: #dddddd; text-align: justify; padding: 3px;">
-											Recuerde  selecionar y guardar antes de salir  asigneles el grupo de empleado en el icono listar empleados para que se les notifique a los  empleados si tiene alguna duda el boton de ayuda de la parte inferior del sistema lo ayuda
-										</p>
-									</div>
-							</div>
-						</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!--Aqui comienza el modal de editar modificaciones-->
-<div class="modal" id="editarnotificaciones" data-keyboard="false" data-backdrop>
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title"></h4>
-			</div>
-			<div class="modal-body">
-				<div class="row" >
-						<div class="col-sm-8 col-sm-offset-2">
-							<div style="text-align: center;">
-								<h3>NOTIFICACIONES</h3>
-								<br>
-							</div>
-							<table class="table table-hover">
-								<thead>
-									<tr>
-										<th >Nombre de Evaluación</th>
-										<th style="text-align: center;" colspan="">Estado</th>
-										<th style="text-align: center;">Notificaciones</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Evaluación 1</td>
-										<td style="text-align: center;"><i class="fa fa-toggle-on fa-2x"></i></td>
-										<td style="text-align: center;"> <a data-toggle="modal" href=''><i class="fa fa-bell-o fa-2x"></i></a></td>
-									</tr>
-									<tr>
-										<td >Evaluación 2</td>
-										<td style="text-align: center;" ><i class="fa fa-toggle-on fa-2x"></i></td>
-										<td style="text-align: center;"><a data-toggle="modal" href='#'><i class="fa fa-bell-o fa-2x"></i></td>
-									</tr>
-									<tr>
-										<td>Evaluación 3</td>
-										<td style="text-align: center;"><i class="fa fa-toggle-on fa-2x"></i></td>
-										<td style="text-align: center;"><a data-toggle="modal" href='#'><i class="fa fa-bell-o fa-2x"></i></td>
-									</tr>
-
-								</tbody>
-							</table>	
-							<div class="row">
-									<div class="col-sm-8">
-										<p style="background: #dddddd; text-align: justify; padding: 3px;">
-											Recuerde  selecionar y guardar antes de salir  asigneles el grupo de empleado en el icono listar empleados para que se les notifique a los  empleados si tiene alguna duda el boton de ayuda de la parte inferior del sistema lo ayuda
-										</p>
-									</div>
-							</div>
-						</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+    								</tbody>
+    							</table>	
+    							<div class="row">
+    									<div class="col-sm-8">
+    										<p style="background: #dddddd; text-align: justify; padding: 3px;">
+    											Recuerde  selecionar y guardar antes de salir  asigneles el grupo de empleado en el icono listar empleados para que se les notifique a los  empleados si tiene alguna duda el boton de ayuda de la parte inferior del sistema lo ayuda
+    										</p>
+    									</div>
+    							</div>
+    							   <div class="form-group" ng-show="bandera">
+    								   <ul class="list-group">
+    									   	<li class="list-group-item">
+    									   		<label for="usr">Evaluacion 1 </label>
+    									   		<span  class="pull-right"><button type="button" class="btn btn-primary">Enviar notificaciones</button></span>
+    									   	</li>
+    								   </ul>
+    								</div>
+    							</div>
+    						</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+	
 
 
 <!-- Aqui comienza el modal de editar periodo-->
