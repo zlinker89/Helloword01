@@ -31,6 +31,9 @@
 				position: absolute;
 				transform:translate(-18px,3px) !important;
 			}
+			p{
+				text-align: justify;
+			}
 			@media(max-width: 940px){
 				.submenu{
 					transform:translate(0px,-55px) !important;
@@ -125,32 +128,37 @@
 								                <input type="text" ng-model="query" ng-change="search()" class="input-large search-query" placeholder="Search">
 								            	<span class="add-on"><i class="fa fa-search"></i></span>
 								            </div>
-								            -->   
+								            -->
+								            <div class="col-sm-12">
+								            	<h4>Pregunta {{currentPage + 1}} de {{pagedItems.length}} </h4>
+								            </div>  
 						                    <div ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse" class="col-sm-12">
 						                        <p>{{item.pregunta}}</p>
-						                        <ul ng-repeat="r in item.respuestas">
-						                        	<li>{{r.respuesta}}</li>
-						                        </ul>
+						                        <div  ng-repeat="r in item.respuestas">
+						                        	<div>
+							                        	<label>
+							                        	    <input type="radio" ng-checked="r.seleccion" value="{{$index}}" ng-click="seleccion($event)" name="{{currentPage}}" >
+							                        	    {{r.respuesta}}
+							                        	</label>
+						                        	</div>
+						                        </div>
 						                    </div>
 								            <div class="col-sm-12">
-							                    <td colspan="6">
 							                    	
 							                        <div class="col-sm-4 col-sm-offset-4">
-							                        	<ul class="pagination">
-								                    		<li ng-class="{disabled: currentPage == 0}">
-							                                    <a href ng-click="prevPage()">« Anterior</a>
-							                                </li>
-							                                <li ng-repeat="n in range(pagedItems.length)"
-							                                    ng-class="{active: n == currentPage}"
-							                                ng-click="setPage()">
-							                                    <a href ng-bind="n + 1">1</a>
-							                                </li>
-							                                <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
-							                                    <a href ng-click="nextPage()">Siguiente »</a>
-							                                </li>
-								                    	</ul>
+							                        	<a href ng-click="prevPage()">
+								                        	<div class="col-xs-6" ng-class="{gris: currentPage == 0}" style="text-align: center;">
+								                        			<i class="fa fa-arrow-circle-left fa-4x"></i> <br>
+								                                    Anterior
+								                        	</div>
+							                        	</a>
+							                        	<a href ng-click="nextPage()">
+								                        	<div class="col-xs-6" ng-class="{gris: currentPage == pagedItems.length - 1}" style="text-align: center;">
+								                        			<i class="fa fa-arrow-circle-right fa-4x"></i> <br>
+								                                    Siguiente
+								                        	</div>
+							                        	</a>
 							                        </div>
-							                    </td>
 							                </div>
 							</div>
 						</div>
@@ -184,7 +192,10 @@
 		<!-- Bootstrap JavaScript -->
 		<script src="../js/bootstrap.min.js"></script>
 		<script src="../js/angular1.min.js"></script>
+		<!--MIS APPS-->
 		<script src="../js/app.js"></script>
+		<script src="../js/preguntas.js" type="text/javascript"></script>
+
 		<script type="text/javascript" >
 		// accion del boton mostrar del navbar
 			$("#mostrar").click(function(){
@@ -198,121 +209,10 @@
 	</body>
 </html>
 <script type="text/javascript">
-	// valor temporal
-	var preguntalst = [
-		{pregunta: "Contribuye a generar una cultura orientada al logro de resultados velando por mantener la efectividad de los procesos." },
-		{pregunta: "Alinea sus propios planes de trabajo con las metas del área e identifica recursos y planes de acción realistas y necesarios a corto, mediano y largo plazo. " },
-		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  " },
-		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  " }
-	];
-	miApp.controller("preguntaList", function($scope, $filter){
-		// init
-		$scope.sortingOrder = sortingOrder;
-		$scope.reverse = false;
-		$scope.filteredItems = [];
-		$scope.groupedItems = [];
-		$scope.itemsPerPage = 1;
-		$scope.pagedItems = [];
-		$scope.currentPage = 0;
-		$scope.items = [
-		    {pregunta: "Contribuye a generar una cultura orientada al logro de resultados velando por mantener la efectividad de los procesos.", respuestas:[
-			{respuesta: "CASI NUNCA"},
-			{respuesta: "EN POCAS OCASIONES"},
-			{respuesta: "NORMALMENTE"},
-			{respuesta: "CON FRECUENCIA"},
-			{respuesta: "SIEMPRE"}
-		]},
-			{pregunta: "Alinea sus propios planes de trabajo con las metas del área e identifica recursos y planes de acción realistas y necesarios a corto, mediano y largo plazo. ", respuestas:[
-			{respuesta: "CASI NUNCA"},
-			{respuesta: "EN POCAS OCASIONES"},
-			{respuesta: "NORMALMENTE"},
-			{respuesta: "CON FRECUENCIA"},
-			{respuesta: "SIEMPRE"}
-		] },
-			{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
-			{respuesta: "CASI NUNCA"},
-			{respuesta: "EN POCAS OCASIONES"},
-			{respuesta: "NORMALMENTE"},
-			{respuesta: "CON FRECUENCIA"},
-			{respuesta: "SIEMPRE"}
-		] },
-			{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
-			{respuesta: "CASI NUNCA"},
-			{respuesta: "EN POCAS OCASIONES"},
-			{respuesta: "NORMALMENTE"},
-			{respuesta: "CON FRECUENCIA"},
-			{respuesta: "SIEMPRE"}
-		]}];
+	// 
+	// function select(r,i){
+	// 	respuestas[i] = r.respuesta;
+	// 	console.log(JSON.stringify(respuestas));
+	// }
 
-		var searchMatch = function (haystack, needle) {
-		    if (!needle) {
-		        return true;
-		    }
-		    return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
-		};
-
-		// init the filtered items
-		$scope.search = function () {
-		    $scope.filteredItems = $filter('filter')($scope.items, function (item) {
-		        for(var attr in item) {
-		            if (searchMatch(item[attr], $scope.query))
-		                return true;
-		        }
-		        return false;
-		    });
-		    // take care of the sorting order
-		    if ($scope.sortingOrder !== '') {
-		        $scope.filteredItems = $filter('orderBy')($scope.filteredItems, $scope.sortingOrder, $scope.reverse);
-		    }
-		    $scope.currentPage = 0;
-		    // now group by pages
-		    $scope.groupToPages();
-		};
-		
-		// calculate page in place
-		$scope.groupToPages = function () {
-		    $scope.pagedItems = [];
-		    
-		    for (var i = 0; i < $scope.filteredItems.length; i++) {
-		        if (i % $scope.itemsPerPage === 0) {
-		            $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)] = [ $scope.filteredItems[i] ];
-		        } else {
-		            $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)].push($scope.filteredItems[i]);
-		        }
-		    }
-		};
-		
-		$scope.range = function (start, end) {
-		    var ret = [];
-		    if (!end) {
-		        end = start;
-		        start = 0;
-		    }
-		    for (var i = start; i < end; i++) {
-		        ret.push(i);
-		    }
-		    return ret;
-		};
-		
-		$scope.prevPage = function () {
-		    if ($scope.currentPage > 0) {
-		        $scope.currentPage--;
-		    }
-		};
-		
-		$scope.nextPage = function () {
-		    if ($scope.currentPage < $scope.pagedItems.length - 1) {
-		        $scope.currentPage++;
-		    }
-		};
-		
-		$scope.setPage = function () {
-		    $scope.currentPage = this.n;
-		};
-
-		// functions have been describe process the data for display
-		$scope.search();
-
-		
-	});
 </script>
