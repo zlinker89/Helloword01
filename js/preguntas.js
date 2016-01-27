@@ -5,7 +5,7 @@ var preguntalst = [
 	{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  " },
 	{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  " }
 ];
-miApp.controller("preguntaList", function($scope, $filter){
+miApp.controller("preguntaList", function($scope, $filter, $http){
 	// init
 	$scope.sortingOrder = sortingOrder;
 	$scope.reverse = false;
@@ -115,7 +115,9 @@ miApp.controller("preguntaList", function($scope, $filter){
 	$scope.search();
 
 	$scope.seleccion = function (r) {
-		
+		/*
+			Guardo la seleccion de las respuestas
+		*/
 		// deselecciono los demas
 		for (var i in $scope.items[r.target.name].respuestas){
 			$scope.items[r.target.name].respuestas[i]["seleccion"] = false;
@@ -128,5 +130,21 @@ miApp.controller("preguntaList", function($scope, $filter){
 		var pagina = $scope.currentPage; // guardo la pagina
 		$scope.search();
 		$scope.currentPage = pagina; // pongo la misma pagina
+	};
+	$scope.EnviarRespuestas = function(){
+		// AQUI EL CODIGO PARA ENVIAR RESPUESTAS AL SERVIDOR
+		var cont = 0;
+		for(var i in respuestas){
+			cont++;
+		};
+		if ((cont == $scope.pagedItems.length)) {
+			alert(JSON.stringify(respuestas));
+			// Metodo post Angular
+			// $http.post('/api/respuestas', respuestas).then(function(d){
+			// 	console.log(d.data);
+			// });
+		}else{
+			$scope.error = true;
+		}
 	};
 });
