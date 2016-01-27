@@ -34,7 +34,11 @@
 				width: 500px;
 			}
 			.radarChart{
-				transform: translate(750px,-350px);
+				transform: translate(750px,-650px);
+				position: absolute;
+			}
+			#soyleyenda{
+				transform: translate(1400px,-450px);
 			}
 			@media(max-width: 900px){
 				.radarChart{
@@ -146,9 +150,40 @@
 										</table>
 									</div>
 								</div>
-								<div class="col-sm-5 hidden-xs">
+								<div class="col-sm-5 hidden-xs hidden-sm">
+									<div id="soyleyenda">
+										<div class="row">
+											<div class="col-sm-2">
+												<div style="background:#EDC951; color:white; width:30px; height: 30px; border-radius: 25px;"></div>
+											</div>
+											<br>
+											<div class="col-sm-6"  style="transform:translate(15px,-12px)"><strong>Liderados</strong></div>
+										</div>
+										<div class="row">
+											<div class="col-sm-2">
+												<div style="background:#CC333F; color:white; width:30px; height: 30px; border-radius: 25px;"></div>
+											</div>
+											<br>
+											<div class="col-sm-6"  style="transform:translate(15px,-12px)"><strong>Jefe</strong></div>
+										</div>
+										<div class="row">
+											<div class="col-sm-2">
+												<div style="background:#00A0B0; color:white; width:30px; height: 30px; border-radius: 25px;"></div>
+											</div>
+											<br>
+											<div class="col-sm-6"  style="transform:translate(15px,-12px)"><strong>Pares</strong></div>
+										</div>
+										<div class="row">
+											<div class="col-sm-2">
+												<div style="background:#ffaa99; color:white; width:30px; height: 30px; border-radius: 25px;"></div>
+											</div>
+											<br>
+											<div class="col-sm-6"  style="transform:translate(15px,-12px)"><strong>Autoevaluación</strong></div>
+										</div>
+										
+									</div>
 									<div class="col-sm-5 radarChart"></div>
-
+									
 											
 											
 								</div>
