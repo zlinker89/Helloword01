@@ -14,6 +14,8 @@
 		<link href="../css/estilos.css" rel="stylesheet">
 		<link href="../css/menu.css" rel="stylesheet">
 
+		<!-- D3.js -->
+		<script src="../js/d3.min.js" charset="utf-8"></script>
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -145,7 +147,10 @@
 									</div>
 								</div>
 								<div class="col-sm-5 hidden-xs">
-									<canvas id="myChart" width="600" height="600"></canvas>
+									<div class="radarChart"></div>
+
+											<script src="../js/radarChar.js"></script>	
+											
 								</div>
 							</div>
 						</div>
@@ -187,9 +192,8 @@
 		</script>
 	</body>
 </html>
+
 <script type="text/javascript">
-	// Get the context of the canvas element we want to select
-	var ctx = document.getElementById("myChart").getContext("2d");
 	miApp.controller('resultados',function ($scope,$http) {
 		$scope.resultados = [
 			{competencia:"Orientacion a Resultados", liderados: 2,jefe:4,pares:4.3,autoevaluacion:4.8},
@@ -200,8 +204,64 @@
 			{competencia:"Liderazgo Capacidad de\n Influenciar", liderados: 2.5,jefe:4.6,pares:4.3,autoevaluacion:4.8},
 			{competencia:"Liderazgo Promotor de\n Confianza", liderados: 5,jefe:4,pares:4.3,autoevaluacion:4.8},
 		];
-
-		// creando la data
+		////////////////////////////////////////////////////////////// 
+		//////////////////////// Set-Up ////////////////////////////// 
+		////////////////////////////////////////////////////////////// 
+		var margin = {top: 100, right: 100, bottom: 100, left: 100},
+			width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
+			height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+				
+		////////////////////////////////////////////////////////////// 
+		////////////////////////// Data ////////////////////////////// 
+		////////////////////////////////////////////////////////////// 
+		var data = [
+				  [//iPhone
+					{axis:"Battery Life",value:0.22},
+					{axis:"Brand",value:0.28},
+					{axis:"Contract Cost",value:0.29},
+					{axis:"Design And Quality",value:0.17},
+					{axis:"Have Internet Connectivity",value:0.22},
+					{axis:"Large Screen",value:0.02},
+					{axis:"Price Of Device",value:0.21},
+					{axis:"To Be A Smartphone",value:0.50}			
+				  ],[//Samsung
+					{axis:"Battery Life",value:0.27},
+					{axis:"Brand",value:0.16},
+					{axis:"Contract Cost",value:0.35},
+					{axis:"Design And Quality",value:0.13},
+					{axis:"Have Internet Connectivity",value:0.20},
+					{axis:"Large Screen",value:0.13},
+					{axis:"Price Of Device",value:0.35},
+					{axis:"To Be A Smartphone",value:0.38}
+				  ],[//Nokia Smartphone
+					{axis:"Battery Life",value:0.26},
+					{axis:"Brand",value:0.10},
+					{axis:"Contract Cost",value:0.30},
+					{axis:"Design And Quality",value:0.14},
+					{axis:"Have Internet Connectivity",value:0.22},
+					{axis:"Large Screen",value:0.04},
+					{axis:"Price Of Device",value:0.41},
+					{axis:"To Be A Smartphone",value:0.30}
+				  ]
+				];
+		////////////////////////////////////////////////////////////// 
+		//////////////////// Draw the Chart ////////////////////////// 
+		////////////////////////////////////////////////////////////// 
+		var color = d3.scale.ordinal()
+			.range(["#EDC951","#CC333F","#00A0B0"]);
+			
+		var radarChartOptions = {
+		  w: width,
+		  h: height,
+		  margin: margin,
+		  maxValue: 0.5,
+		  levels: 5,
+		  roundStrokes: true,
+		  color: color
+		};
+		//Call function to draw the Radar chart
+		RadarChart(".radarChart", data, radarChartOptions);
+		/*// creando la data
 		var data = {labels:[],datasets:[]};
 		data.datasets.push({
 			label: "primero",
@@ -216,9 +276,9 @@
 		for(var i in $scope.resultados){
 			data.labels.push($scope.resultados[i].competencia);
 			data.datasets[0].data.push(($scope.resultados[i].liderados + $scope.resultados[i].jefe + $scope.resultados[i].pares + $scope.resultados[i].autoevaluacion)/4);
-		};
+		};*/
 
-		var myRadarChart = new Chart(ctx).Radar(data);
+		//var myRadarChart = new Chart(ctx).Radar(data);
 
 	});
 
