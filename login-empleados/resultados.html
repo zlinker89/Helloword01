@@ -215,6 +215,29 @@
 		////////////////////////////////////////////////////////////// 
 		////////////////////////// Data ////////////////////////////// 
 		//////////////////////////////////////////////////////////////
+		var resultadosArray = $.map($scope.resultados[0], function(value, index) {
+				    return [value];
+				});
+		for (var i = 0; i <= resultadosArray.length - 2; i++){
+			data.push([]);
+			var cont = 1;
+			for (var j = 0; j <= $scope.resultados.length - 1; j++) {
+				resultadosArray = $.map($scope.resultados[j], function(value, index) {
+				    return [value];
+				});
+							console.log(resultadosArray[cont + i]);
+
+				if(resultadosArray[cont + i] !== undefined){
+						if(cont <= $scope.resultados.length - 1){
+							data[i].push({axis:$scope.resultados[j].competencia,value: resultadosArray[cont + i]});
+							
+						}else{
+							data[i].push({axis:$scope.resultados[j].competencia,value: resultadosArray[cont]});
+						}
+					};
+				}
+		};
+		/*console.log(data);
 			data.push([{axis:"Orientacion a Resultados",value: $scope.resultados[0].liderados},
 								{axis:"Enfoque en la Seguridad, \nSalud y Medio Ambiente",value: $scope.resultados[1].liderados},
 								{axis:"Capacidad de Aprendizaje y\n de Enseñar a otros",value:$scope.resultados[2].liderados},
@@ -245,7 +268,8 @@
 								{axis:"Comunicación Efectiva",value:$scope.resultados[3].autoevaluacion},
 								{axis:"Trabajo en Equipo",value:$scope.resultados[4].autoevaluacion},
 								{axis:"Liderazgo Capacidad de\n Influenciar",value:$scope.resultados[5].autoevaluacion},
-								{axis:"Liderazgo Promotor de\n Confianza",value:$scope.resultados[6].autoevaluacion}]);	  
+								{axis:"Liderazgo Promotor de\n Confianza",value:$scope.resultados[6].autoevaluacion}]);	 
+								console.log(data); */
 		////////////////////////////////////////////////////////////// 
 		//////////////////// Draw the Chart ////////////////////////// 
 		////////////////////////////////////////////////////////////// 
