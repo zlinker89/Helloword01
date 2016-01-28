@@ -160,7 +160,7 @@
                                 <label for="input" class="col-sm-2 control-label">Seleccione el Libro:</label>
                                 <div class="col-sm-2">
                                     <select  ng-model="sheet" id="input" class="form-control" required="required">
-                                        <option ng-repeat="s in sheets" >{{"Sheet" + ($index + 1)}}</option>
+                                        <option ng-repeat="(key, value) in sheets"  >{{key}}</option>
                                     </select>
                                 </div>
                             </div>
