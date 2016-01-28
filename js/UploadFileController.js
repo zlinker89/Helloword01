@@ -25,13 +25,11 @@ app.factory("XLSXReaderService", ['$q', '$rootScope',
 app.controller('PreviewController', function($scope, XLSXReaderService,$http) {
     document.getElementById("mensaje").style.display = "none";
     document.getElementById("error").style.display = "none";
-
     $scope.showPreview = false;
     $scope.showJSONPreview = true;
     $scope.json_string = "";
 
     $scope.fileChanged = function(files) {
-            
         $scope.isProcessing = true;
         $scope.sheets = [];
         $scope.excelFile = files[0];
@@ -52,53 +50,67 @@ app.controller('PreviewController', function($scope, XLSXReaderService,$http) {
         $(".progress").css("display","block");
         $(".progress-bar").css("width","0%");
 
-        if($scope.sheets !== undefined){
-            var obj = $scope.sheets["Sheet1"];
-            //console.log($scope.sheets["Sheet1"]);
-            /* ---------------------------------BARRA PROGRESO ---------------------------------*/
-            var barra = $(".progress-bar");
-            var intervalo = setInterval(function(){
-               barra.width(barra.width() + (100/obj.length) +"%" );
-               if(barra.width() > 100){
-               
-                    barra.removeClass("active");
-                    // aqui oculto la barra y muestro el mensaje
-                    setTimeout(function(){
-                        $(".progress").css("display","none");
-                        document.getElementById("mensaje").style.display = "block";
-                        // cerramos el modal
-                        setTimeout(function(){$('#ventana1').modal('hide');},1500)
-                    },1000);
-                    
-                    clearInterval(intervalo);
-               }
-               
-            },obj.length/10);
+        try{
+            if($scope.sheets !== undefined){
+                var obj = $scope.sheets[$scope.sheet];
+                //console.log($scope.sheets["Sheet1"]);
+                /* ---------------------------------BARRA PROGRESO ---------------------------------*/
+                var barra = $(".progress-bar");
+                var intervalo = setInterval(function(){
+                   barra.width(barra.width() + (100/obj.length) +"%" );
+                   if(barra.width() > 100){
+                   
+                        barra.removeClass("active");
+                        // aqui oculto la barra y muestro el mensaje
+                        setTimeout(function(){
+                            $(".progress").css("display","none");
+                            document.getElementById("mensaje").style.display = "block";
+                            // cerramos el modal
+                            setTimeout(function(){$('#ventana1').modal('hide');},1500)
+                        },1000);
+                        
+                        clearInterval(intervalo);
+                   }
+                   
+                },obj.length/10);
 
+                if(obj[0].Cedula === undefined){
+                    alert("No se encuentra el campo cedula");
+                }else{
+                    for (var i in obj) {
+                        console.log();
+                        if(obj[i].Cedula !== ""){
+                                var empleado = {
+                                    id: null, 
+                                    Cedula: obj[i].Cedula,
+                                    Nombre: obj[i].Nombre,
+                                    tipo: obj[i].Type,
+                                    Departament: obj[i].Department,
+                                    Area: obj[i].Area,
+                                    SubArea: obj[i].SubArea,
+                                    CrewCd: obj[i]['Crew Cd'],
+                                    RosterPosition: obj[i]['Roster position'],
+                                    Unit: obj[i].Unit
+                                }
+                                console.log(JSON.stringify(empleado));
 
-            for (var i in obj) {
-                var empleado = {
-                    id: null, 
-                    Cedula: obj[i].Cedula,
-                    Nombre: obj[i].Nombre,
-                    tipo: obj[i].Type,
-                    Departament: obj[i].Department,
-                    Area: obj[i].Area,
-                    SubArea: obj[i].SubArea,
-                    CrewCd: obj[i]['Crew Cd'],
-                    RosterPosition: obj[i]['Roster position'],
-                    Unit: obj[i].Unit
+                                /*$http.post("/api/empleado/", empleado).then(function (data) {
+                                    console.log(JSON.stringify(data.data));
+                                });*/
+                        }else{
+                            alert("No se encuentra la cedula en la fila" + (Number(i) + 2));
+                        }
+                    }
                 }
-                console.log(JSON.stringify(empleado));
+                
+            }else{
+                document.getElementById("error").style.display = "block";
 
-                /*$http.post("/api/empleado/", empleado).then(function (data) {
-                    console.log(JSON.stringify(data.data));
-                });*/
             }
-        }else{
-            document.getElementById("error").style.display = "block";
-
+        }catch(Exepcion){
+            alert("Debe seleccionar una hoja valida");
         }
+        
 
         
     };
