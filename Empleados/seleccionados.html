@@ -95,8 +95,13 @@
                     </nav>
                 </div>
                 <div class="row" >
-                    <div class="row" id="iconos_der" ng-controller="tabla">
-                        <div class="caja_der" id="example"></div>
+                    <div class="row caja_der" id="iconos_der" ng-controller="tabla">
+                        <div class="col-sm-12">
+                            <button ng-click="enviar()" type="button" class="btn btn-success">Guardar cambios</button>
+                        </div>
+                        <br>
+                        <br>
+                        <div id="example"></div>
                     </div>
                 </div>
             </div>
