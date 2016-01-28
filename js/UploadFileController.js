@@ -1,5 +1,4 @@
 var app = angular.module("miApp", []);
-
 app.factory("XLSXReaderService", ['$q', '$rootScope',
     function($q, $rootScope) {
         var service = function(data) {
@@ -24,6 +23,9 @@ app.factory("XLSXReaderService", ['$q', '$rootScope',
 ]);
 
 app.controller('PreviewController', function($scope, XLSXReaderService,$http) {
+    document.getElementById("mensaje").style.display = "none";
+    document.getElementById("error").style.display = "none";
+
     $scope.showPreview = false;
     $scope.showJSONPreview = true;
     $scope.json_string = "";
@@ -36,11 +38,36 @@ app.controller('PreviewController', function($scope, XLSXReaderService,$http) {
             $scope.sheets = xlsxData.sheets;
             $scope.isProcessing = false;
             // mi ediciones
+            document.getElementById("uploadFile").value = document.getElementById("uploadBtn").value;
+            
+        });
+    };
+
+    $scope.EnviarLista = function(){
+        if($scope.sheets !== undefined){
             var obj = $scope.sheets["Sheet1"];
-            console.log($scope.sheets["Sheet1"]);
+            //console.log($scope.sheets["Sheet1"]);
+            /* ---------------------------------BARRA PROGRESO ---------------------------------*/
+            var barra = $(".progress-bar");
+            var intervalo = setInterval(function(){
+               barra.width(barra.width() + (100/obj.length) +"%" );
+               if(barra.width() > 100){
+               
+                    barra.removeClass("active");
+                    // aqui oculto la barra y muestro el mensaje
+                    setTimeout(function(){
+                        $(".progress").css("display","none");
+                        document.getElementById("mensaje").style.display = "block";},1000);
+                    
+                    clearInterval(intervalo);
+               }
+               
+            },obj.length/10);
+
+
             for (var i in obj) {
                 var empleado = {
-                    id: null,
+                    id: null, 
                     Cedula: obj[i].Cedula,
                     Nombre: obj[i].Nombre,
                     tipo: obj[i].Type,
@@ -54,13 +81,16 @@ app.controller('PreviewController', function($scope, XLSXReaderService,$http) {
                 //console.log(JSON.stringify(empleado));
 
                 // le pongo el nombre del archivo
-                document.getElementById("uploadFile").value = document.getElementById("uploadBtn").value;
-                $http.post("/api/empleado/", empleado).then(function (data) {
+                /*$http.post("/api/empleado/", empleado).then(function (data) {
                     console.log(JSON.stringify(data.data));
-                });
+                });*/
             }
-        });
-    }
+        }else{
+            document.getElementById("error").style.display = "block";
+
+        }
+        
+    };
 
     //$scope.updateJSONString = function() {
     //    $scope.json_string = JSON.stringify($scope.sheets[$scope.selectedSheetName], null, 2);
