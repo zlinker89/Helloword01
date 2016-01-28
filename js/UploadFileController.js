@@ -38,7 +38,8 @@ app.controller('PreviewController', function($scope, XLSXReaderService,$http) {
             $scope.sheets = xlsxData.sheets;
             $scope.isProcessing = false;
             // mi ediciones
-            document.getElementById("uploadFile").value = document.getElementById("uploadBtn").value;
+            var file_name = document.getElementById("uploadBtn").value;
+            document.getElementById("uploadFile").value = file_name.substring(12,file_name.length);
             
         });
     };
@@ -80,7 +81,6 @@ app.controller('PreviewController', function($scope, XLSXReaderService,$http) {
                 }
                 //console.log(JSON.stringify(empleado));
 
-                // le pongo el nombre del archivo
                 /*$http.post("/api/empleado/", empleado).then(function (data) {
                     console.log(JSON.stringify(data.data));
                 });*/
