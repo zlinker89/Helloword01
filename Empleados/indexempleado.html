@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="miApp">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Title Page</title>
+        <title>Modulo Empleados</title>
 
         <!-- Bootstrap CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
         <link href="../css/side-wraper.css" rel="stylesheet">
-
+        <!--Mis estilos-->
+        <link href="../css/estilos.css" rel="stylesheet">
+        <link href="../css/menu.css" rel="stylesheet">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -18,52 +20,21 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
         <style type="text/css">
-            .icono_grandes{
-                font-size: 10em !important;
+            .fileUpload {
+                position: relative;
+                overflow: hidden;
+                margin: 10px;
             }
-            #caja, #izq,#der{
-                height: 100vh;
-            }
-            #iconos_der{
-                height: 70vh;
-            }
-            .caja_izq{
-                margin-top: 30px;
-            }
-            .caja_der{
-                margin-top: 80px;
-            }
-            .submenu{
-                margin-right: 5px;
-            }
-            .navbar{
-                background: #2b78e4;
-            }
-            .navbar a, .navbar h2{
-                color: white !important;
-            }
-            @media(max-width:990px){
-                #izq{
-                    display: block;
-                }
-            }
-            .navbar-right{
-                margin-right: 20px;
-            }
-            #icono_user{
-                color: white;
-                margin-top: 10px;
-                font-size: 3em;
-            }
-            h4{
-                color: black !important;
-            }
-            /*colores*/
-            .morado{
-                color: #93c47d !important;
-            }
-            .azul{
-                color: #085394 !important;
+            .fileUpload input.upload {
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 0;
+                padding: 0;
+                font-size: 20px;
+                cursor: pointer;
+                opacity: 0;
+                filter: alpha(opacity=0);
             }
         </style>
     </head>
@@ -114,11 +85,11 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                <div class="col-xs-12">
+                <div class="row" id="menu">
                     <nav class="navbar navbar-default" role="navigation">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
-                            <button type="button" id="mostrar" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <button type="button" id="mostrar" class="navbar-toggle pull-left menu_responsive" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
@@ -141,13 +112,13 @@
                 <div class="row" >
                     <div class="row" id="iconos_der">
                         <a href="#ventana1" data-toggle="modal">
-                            <div class="col-xs-6 col-sm-3 caja_der morado" style="text-align: center"><i class="fa fa-upload icono_grandes"></i>
+                            <div class="col-xs-6 col-sm-3 caja_der verde" style="text-align: center"><i class="fa fa-upload icono_grandes"></i>
                                 <h4 >Subir lista de empleados</h4>
                             </div>
                         </a>
 
                         <a href="#ventana2" data-toggle="modal">
-                            <div class="col-xs-6 col-sm-3 caja_der morado" style="text-align: center"><i class="fa fa-list icono_grandes"></i>
+                            <div class="col-xs-6 col-sm-3 caja_der verde" style="text-align: center"><i class="fa fa-list icono_grandes"></i>
                                 <h4 >Lista de empleados</h4>
                             </div>
                         </a>
@@ -182,21 +153,24 @@
                     </div>
                 <!-- contenido de la ventana-->
                 <div class="modal-body">
-                    <div class="row">
+                    <div class="row" ng-controller="PreviewController">
 
                         <div class="col-xs-12 col-md-3">
                             <label>Seleccione el archivo que desee subir</label>
                         </div>
 
                         <div class="col-xs-12 col-md-8">
-                            <input type="text" class="form-control"> </input>
+                            <div class='form-group'>
+                                <input type="text" class="form-control" id="uploadFile"> </input>
+                            </div>
                         </div>
 
                
                         <div class="col-xs-12 col-md-1" type="file">
-                            <a href="#ventana1" data-toggle="modal" style="color: #93c47d;" >
-                                    <div style="padding:5px;" class="col-xs-12"><i class="fa fa-folder-open fa-2x" ></i></div>
-                            </a>
+                            <div class="fileUpload btn verde" style="color: #93c47d; transform:translate(-15px,-15px)">
+                                <span><i class="fa fa-folder-open fa-2x" ></i></span>
+                                <input type="file" id="uploadBtn" name="excel_file" accept=".xlsx" onchange="angular.element(this).scope().fileChanged(this.files);" required="true" class="upload" />
+                            </div>
                         </div>
                     </div>
                     <br>
@@ -268,6 +242,12 @@
         <script src="../js/jquery.js"></script>
         <!-- Bootstrap JavaScript -->
         <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/angular.min.js"></script>
+        <script src="../js/xlsx/lodash.min.js"></script>
+        <script src="../js/xlsx/jszip.js"></script>
+        <script src="../js/xlsx/xlsx.js"></script>
+        <script src="../js/xlsx/xlsx-reader.js"></script>
+        <script src="../js/UploadFileController.js"></script>
         <script type="text/javascript" >
         // accion del boton mostrar del navbar
             $("#mostrar").click(function(){
