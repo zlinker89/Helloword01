@@ -31,6 +31,7 @@ app.controller('PreviewController', function($scope, XLSXReaderService,$http) {
     $scope.json_string = "";
 
     $scope.fileChanged = function(files) {
+            
         $scope.isProcessing = true;
         $scope.sheets = [];
         $scope.excelFile = files[0];
@@ -45,6 +46,12 @@ app.controller('PreviewController', function($scope, XLSXReaderService,$http) {
     };
 
     $scope.EnviarLista = function(){
+        // reiniciamos siempre el modal
+        document.getElementById("mensaje").style.display = "none";
+        document.getElementById("error").style.display = "none";
+        $(".progress").css("display","block");
+        $(".progress-bar").css("width","0%");
+
         if($scope.sheets !== undefined){
             var obj = $scope.sheets["Sheet1"];
             //console.log($scope.sheets["Sheet1"]);
@@ -58,7 +65,10 @@ app.controller('PreviewController', function($scope, XLSXReaderService,$http) {
                     // aqui oculto la barra y muestro el mensaje
                     setTimeout(function(){
                         $(".progress").css("display","none");
-                        document.getElementById("mensaje").style.display = "block";},1000);
+                        document.getElementById("mensaje").style.display = "block";
+                        // cerramos el modal
+                        setTimeout(function(){$('#ventana1').modal('hide');},1500)
+                    },1000);
                     
                     clearInterval(intervalo);
                }
@@ -79,7 +89,7 @@ app.controller('PreviewController', function($scope, XLSXReaderService,$http) {
                     RosterPosition: obj[i]['Roster position'],
                     Unit: obj[i].Unit
                 }
-                //console.log(JSON.stringify(empleado));
+                console.log(JSON.stringify(empleado));
 
                 /*$http.post("/api/empleado/", empleado).then(function (data) {
                     console.log(JSON.stringify(data.data));
@@ -89,6 +99,7 @@ app.controller('PreviewController', function($scope, XLSXReaderService,$http) {
             document.getElementById("error").style.display = "block";
 
         }
+
         
     };
 
