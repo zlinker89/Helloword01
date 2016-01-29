@@ -246,7 +246,7 @@
       <!--  Modal 3-->
 
             <!-- esta es la parte del modal -->
-         <div class="modal fade bs-ventana2-modal-lg" id="ventana3" data-keyboard="false" data-backdrop>
+         <div class="modal fade bs-ventana2-modal-lg" id="ventana3" data-keyboard="false" data-backdrop ng-controller="evaluaciones">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <!--  header de la ventana-->
@@ -262,19 +262,27 @@
                              </div>
                              <div class="col-sm-12">
                                     <br>
-                                    <br>
                                  <div class="col-sm-12">
                                     <div class="col-sm-2"><label for="">Documento:</label></div>
-                                     <div class="col-sm-10"><input type="text" ng-model="buscar_cedula" class="form-control" size="60"></input></div>
+                                     <div class="col-sm-10"><input type="number" ng-change="BuscarEmpleado()" ng-model="buscar_cedula" class="form-control" size="60"></input></div>
                                  </div>
-                                 <div class="col-sm-12" ng-show="buscar_cedula">
+                                 <div class="col-sm-12" ng-show="resultado">
                                     <br>
                                      <h4>Nombre: {{empleado.nombre}}</h4>
+                                     <div ng-show="empleado">
+                                        <ol class="breadcrumb">
+                                             <li>{{empleado.unit}}</li>
+                                             <li>{{empleado.departament}}</li>
+                                             <li>{{empleado.area}}</li>
+                                             <li>{{empleado.subarea}}</li>
+                                             <li class="active">{{empleado.crewcd}}</li>
+                                        </ol>
+                                     </div>
                                      <hr>
                                  </div>
                              </div>
                              <div class="col-sm-12">
-                                    <div ng-controller="evaluaciones">
+                                    <div >
                                         <script type="text/javascript">
                                                 var sortingOrder = 'evaluacion';
                                             </script>
