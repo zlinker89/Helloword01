@@ -271,7 +271,7 @@
                                      <h4>Nombre: {{empleado.nombre}}</h4>
                                      <div ng-show="empleado">
                                         <ol class="breadcrumb">
-                                             <li>{{empleado.unit}}</li>
+                                             <li><strong>{{empleado.unit}}</strong></li>
                                              <li>{{empleado.departament}}</li>
                                              <li>{{empleado.area}}</li>
                                              <li>{{empleado.subarea}}</li>
@@ -325,7 +325,7 @@
                                                                 </div>
                                                             </td>
                                                             <td>
-                                                                <button type="button" ng-click="AddEmpleado({{item.idevaluacion}})" class="btn btn-default"><i class="fa fa-plus-circle fa-3x verde"></i></button>
+                                                                <button type="button" ng-click="AddEmpleado($index)" class="btn btn-default"><i class="fa fa-plus-circle fa-3x verde"></i></button>
                                                             </td>
                                                         </tr>
                                                     </tbody>
