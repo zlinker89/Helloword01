@@ -81,6 +81,10 @@
 				text-decoration: none !important;
 				transition:color 0.2s;
 			}
+			.rojo{
+				color: #b2573b;
+				text-decoration: none !important;
+			}
 			/*HOVER*/
 			.blanco:hover{
 				color: #ddd;
@@ -97,6 +101,10 @@
 			}
 			.morado:hover{
 				color: #674ea7 !important;
+				text-decoration: none !important;
+			}
+			.rojo:hover{
+				color: #652322;
 				text-decoration: none !important;
 			}
 			/*--------------FIN-----------COLORES--------------------------------------------------*/
