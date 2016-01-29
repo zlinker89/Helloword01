@@ -1,4 +1,5 @@
-// valor temporal
+var app = angular.module("miApp", []);
+
 app.controller("evaluaciones", function($scope, $filter, $http){
     // init
     $scope.sortingOrder = sortingOrder;
@@ -9,17 +10,17 @@ app.controller("evaluaciones", function($scope, $filter, $http){
     $scope.pagedItems = [];
     $scope.currentPage = 0;
     $scope.items = [
-        {"idevaluacion":1,"evaluacion":"Evaluacion 1", "estado":true},
-        {"idevaluacion":2,"evaluacion":"Evaluacion 2", "estado":true},
-        {"idevaluacion":3,"evaluacion":"Evaluacion 3", "estado":false},
-        {"idevaluacion":4,"evaluacion":"Evaluacion 4", "estado":true},
-        {"idevaluacion":5,"evaluacion":"Evaluacion 5", "estado":false},
-        {"idevaluacion":6,"evaluacion":"Evaluacion 6", "estado":false},
-        {"idevaluacion":7,"evaluacion":"Evaluacion 7", "estado":false},
-        {"idevaluacion":8,"evaluacion":"Evaluacion 8", "estado":true},
-        {"idevaluacion":9,"evaluacion":"Evaluacion 9", "estado":false},
-        {"idevaluacion":10,"evaluacion":"Evaluacion 10", "estado":true},
-        {"idevaluacion":11,"evaluacion":"Evaluacion 11", "estado":false},
+        {"idevaluacion":1,"evaluacion":"evaluacion 1", "estado":true},
+        {"idevaluacion":2,"evaluacion":"evaluacion 2", "estado":true},
+        {"idevaluacion":3,"evaluacion":"evaluacion 3", "estado":false},
+        {"idevaluacion":4,"evaluacion":"evaluacion 4", "estado":true},
+        {"idevaluacion":5,"evaluacion":"evaluacion 5", "estado":false},
+        {"idevaluacion":6,"evaluacion":"evaluacion 6", "estado":false},
+        {"idevaluacion":7,"evaluacion":"evaluacion 7", "estado":false},
+        {"idevaluacion":8,"evaluacion":"evaluacion 8", "estado":true},
+        {"idevaluacion":9,"evaluacion":"evaluacion 9", "estado":false},
+        {"idevaluacion":10,"evaluacion":"evaluacion 10", "estado":true},
+        {"idevaluacion":11,"evaluacion":"evaluacion 11", "estado":false},
     ];
     // respuestas que seleccionan
     var respuestas = [];

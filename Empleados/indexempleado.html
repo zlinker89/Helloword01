@@ -308,14 +308,14 @@
                                                 <table class="table table-bordered table-hover" style="text-align: center;">
                                                     <thead>
                                                         <tr>
-                                                            <th>Evaluación</th>
+                                                            <th>Periodos</th>
                                                             <th>Estado</th>
                                                             <th>Agregar</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
-                                                            <td>{{item.evaluacion}}</td>
+                                                            <td>{{item.periodo}}</td>
                                                             <td ng-switch on="item.estado">
                                                                 <div ng-switch-when="true">
                                                                     <i class="fa fa-toggle-off fa-3x rojo"></i>
@@ -369,7 +369,7 @@
         <script src="../js/xlsx/xlsx-reader.js"></script>
         <!--mis scripts-->
         <script src="../js/UploadFileController.js"></script>
-        <script src="../js/listaevaluacion.js" type="text/javascript"></script>
+        <script src="../js/listaperiodo.js" type="text/javascript"></script>
         <script type="text/javascript" >
         // accion del boton mostrar del navbar
             $("#mostrar").click(function(){
