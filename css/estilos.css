@@ -1,6 +1,6 @@
 			/*-------------------------ICONOS--------------------------------------------------*/
 			.icono_grandes{
-				font-size: 8em !important;
+				font-size: 6.4em !important;
 			}
 			#icono_user{
 				color: white;
@@ -21,10 +21,16 @@
 			}
 			
 			.caja_izq{
-				margin-top: 30px;
+				margin-top: 5%;
 			}
 			.caja_der{
 				margin-top: 80px;
+			}
+			.sidebar-brand{
+				display: none;
+			}
+			#sidebar-wrapper, .sidebar-nav{
+				overflow: hidden !important;
 			}
 			/*--------------FIN-----------CAJAS--------------------------------------------------*/
 
@@ -134,7 +140,7 @@
 			/*--------------FIN-----------CENTRAR DIVS--------------------------------------------------*/
 
 			/*-------------------------LISTAS--------------------------------------------------*/
-			.list-group-item-header{
+			.list-group-item-header, table thead tr{
 				background: rgba(0,0,0,0.2) !important;
 				height: 30px !important;
 				font-size: 0.9em;
@@ -142,11 +148,11 @@
 			.list-group-item{
                 height: 60px;
             }
-            .list-group-item:nth-child(even){
-                background: #eeeeee;
+            .list-group-item:nth-child(even), table tbody tr:nth-child(even){
+                background: #eeeeee !important;
             }
-            .list-group-item:nth-child(odd){
-                background: #dddddd;
+            .list-group-item:nth-child(odd), table tbody tr:nth-child(even){
+                background: #dddddd !important;
             }
             /*LISTAS de competencias*/
             .lista1 .list-group-item-header{
@@ -215,6 +221,12 @@
 				}
 				.caja_izq{
 					margin-top: 3px;
+				}
+				#sidebar-wrapper, .sidebar-nav{
+					overflow: scroll !important;
+				}
+				.sidebar-brand{
+					display: block !important;
 				}
 			}
 			/*--------------FIN-----------RESPONSIVE--------------------------------------------------*/

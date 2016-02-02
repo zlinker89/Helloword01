@@ -10,17 +10,17 @@ app.controller("evaluaciones", function($scope, $filter, $http){
     $scope.pagedItems = [];
     $scope.currentPage = 0;
     $scope.items = [
-        {"idevaluacion":1,"evaluacion":"evaluacion 1", "estado":true},
-        {"idevaluacion":2,"evaluacion":"evaluacion 2", "estado":true},
-        {"idevaluacion":3,"evaluacion":"evaluacion 3", "estado":false},
-        {"idevaluacion":4,"evaluacion":"evaluacion 4", "estado":true},
-        {"idevaluacion":5,"evaluacion":"evaluacion 5", "estado":false},
-        {"idevaluacion":6,"evaluacion":"evaluacion 6", "estado":false},
-        {"idevaluacion":7,"evaluacion":"evaluacion 7", "estado":false},
-        {"idevaluacion":8,"evaluacion":"evaluacion 8", "estado":true},
-        {"idevaluacion":9,"evaluacion":"evaluacion 9", "estado":false},
-        {"idevaluacion":10,"evaluacion":"evaluacion 10", "estado":true},
-        {"idevaluacion":11,"evaluacion":"evaluacion 11", "estado":false},
+        {"idpregunta":1,"pregunta":"pregunta 1", "estado":true},
+        {"idpregunta":2,"pregunta":"pregunta 2", "estado":true},
+        {"idpregunta":3,"pregunta":"pregunta 3", "estado":false},
+        {"idpregunta":4,"pregunta":"pregunta 4", "estado":true},
+        {"idpregunta":5,"pregunta":"pregunta 5", "estado":false},
+        {"idpregunta":6,"pregunta":"pregunta 6", "estado":false},
+        {"idpregunta":7,"pregunta":"pregunta 7", "estado":false},
+        {"idpregunta":8,"pregunta":"pregunta 8", "estado":true},
+        {"idpregunta":9,"pregunta":"pregunta 9", "estado":false},
+        {"idpregunta":10,"pregunta":"pregunta 10", "estado":true},
+        {"idpregunta":11,"pregunta":"pregunta 11", "estado":false},
     ];
     // respuestas que seleccionan
     var respuestas = [];
@@ -93,5 +93,5 @@ app.controller("evaluaciones", function($scope, $filter, $http){
     // functions have been describe process the data for display
     $scope.search();
 
-
+    
 });
