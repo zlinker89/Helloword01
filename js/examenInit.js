@@ -15,7 +15,7 @@ var examen = [
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	] },
-		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
+		{pregunta: "Actúa con confianza en sí mismo, tomando la iniciativa y decisiones para resolver desafíos o situaciones complejas cuando surjan. ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
@@ -206,10 +206,61 @@ var examen = [
 ];
 // esto estara visible en mis apps
 var miApp = angular.module("preguntas",[]);
-miApp.controller("preguntaList", function($scope, $http){
-	$scope.contador = 0;
-	$scope.examen = examen;
+// cargamos lo que tengo guardado
+var respuestas = JSON.parse(localStorage.getItem('respuestas_marcadas')) || [];
+var hash = localStorage.getItem("competencia") || false;
+if(hash != false){
+	location.href = "#" + hash;
+}
+//localStorage.setItem('respuestas_marcadas',undefined);
 
+miApp.controller("preguntaList", function($scope, $http){
+
+	$scope.respuestas_marcadas = respuestas;
+	$scope.contador = 0;
+	//marco solo la primera vez
+	for (var i in respuestas){
+		console.log(examen[respuestas[i].competencia].preguntas[respuestas[i].idpregunta].respuestas[respuestas[i].idrespuesta]["seleccion"]);
+			 examen[respuestas[i].competencia].preguntas[respuestas[i].idpregunta].respuestas[respuestas[i].idrespuesta]["seleccion"] = true;
+	}
+	$scope.examen = examen;
+	var cont = 0;
+
+	$scope.seleccion = function (r) {
+
+		/*
+			Guardo la seleccion de las respuestas
+		*/
+		// deselecciono los demas
+
+		/*
+		// marco la seleccion
+		$scope.examen[r.target.name].preguntas[r.target.value].respuestas[i].respuesta["seleccion"] = true;*/
+		// VERIFICO SI EXISTE
+		for(var j in respuestas){
+			var rr = respuestas[j];
+			if(rr.competencia === r.target.value && rr.idpregunta ===  r.target.name){
+				rr.respuesta =  $scope.examen[r.target.value].preguntas[r.target.name].respuestas[r.target.id].respuesta;
+				rr.idrespuesta = r.target.id;
+				cont++;
+			}
+		}
+		// primera vez
+		if(cont == 0){
+			respuestas.push({competencia: r.target.value, idpregunta: r.target.name , 
+				respuesta: $scope.examen[r.target.value].preguntas[r.target.name].respuestas[r.target.id].respuesta, 
+				idrespuesta: r.target.id});
+		}else{
+			cont = 0;
+		}
+		
+		
+	};
+
+	$scope.GuardarRespuestas = function (pagina) {
+		localStorage.setItem("competencia",("pagina" + (pagina + 1)));
+		localStorage.setItem('respuestas_marcadas',JSON.stringify(respuestas));
+	};
 	// // init
 	// $scope.sortingOrder = sortingOrder;
 	// $scope.reverse = false;
