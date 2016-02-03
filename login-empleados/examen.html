@@ -27,14 +27,45 @@
 			border: none !important;
 			padding: 0px !important;
 		}
-		#breads .navbar a{
-			background: lightblue !important;
-			border: skyblue !important;
+		/***************COLORES**********************/
+		#breads .navbar .btn{
+			color:black;
 		}
-		#breads .navbar .active a{
+		.btn1{
+			background: #E0F7FA!important;
+			border: #E0F7FA !important;
+		}
+		.btn2{
+			background: #E8F5E9 !important;
+			border: #E8F5E9 !important;
+		}
+		.btn3{
+			background: #F0F4C3 !important;
+			border: #FFE0B2 !important;
+		}
+		.btn4{
+			background: #FFECB3 !important;
+			border: #FFECB3 !important;
+		}
+		.btn5{
+			background: #D7CCC8 !important;
+			border: #D7CCC8 !important;
+		}
+		.btn6{
+			background: #FFCCBC !important;
+			border: #FFCCBC !important;
+		}
+		.btn7{
+			background: #CFD8DC !important;
+			border: #CFD8DC !important;
+		}
+		#breads .navbar .active .btn{
 			background: darkblue !important;
 			color: white;
 		}
+
+		/*********fin******COLORES**********************/
+
 		#breads{
 			background:white;
 			padding-bottom: 0px; 
@@ -128,7 +159,9 @@
 			<nav class=" ">
 			      <div class="navbar navbar-default" >
 				        <div class="nav navbar-nav btn-group btn-breadcrumb">
-				          <li ng-repeat="e in examen"><a href="#pagina{{$index + 1}}" class="btn btn-primary"><i class="glyphicon glyphicon-home"></i></a></li>
+				          <li ng-repeat="e in examen"><a href="#pagina{{$index + 1}}" class="btn btn{{$index + 1}}">
+				          	{{$index + 1}}
+				          </a></li>
 				          
 				        </div>
 			      </div>
@@ -175,8 +208,8 @@
 					<div  class="col-sm-12  pregunta">
 						
 						
-						<div class="well well-lg" ng-repeat="e in examen">
-							<div id="pagina{{$index + 1}}" class="row container-fluid" >
+						<div class="well well-lg btn{{$index + 1}}" ng-repeat="e in examen">
+							<div id="pagina{{$index + 1}}" class="row container-fluid " >
 								<h4  class="col-sm-12"><strong>{{e.competencia}}</strong></h4>
 										<ol class="col-sm-10 col-sm-offset-1" style="text-align:justify">
 											<li ng-repeat="p in e.preguntas">
