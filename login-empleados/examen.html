@@ -13,6 +13,7 @@
 		<!--Mis estilos-->
 		<link href="../css/estilos.css" rel="stylesheet">
 		<link href="../css/menu.css" rel="stylesheet">
+		<link href="../css/breadcrumbs.css" rel="stylesheet">
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,6 +22,31 @@
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
 		<style type="text/css">
+		#breads .navbar{
+			background: none !important;
+			border: none !important;
+			padding: 0px !important;
+		}
+		#breads .navbar a{
+			background: lightblue !important;
+			border: skyblue !important;
+		}
+		#breads .navbar .active a{
+			background: darkblue !important;
+			color: white;
+		}
+		#breads{
+			background:white;
+			padding-bottom: 0px; 
+			padding-top:50px;
+			transform:translate(6%,-20px);
+			width: 100%;
+			position: fixed;
+			z-index: 69;
+		}
+		#menu, #footer{
+			z-index:70 !important;
+		}
 			.submenu{
 				transform:translate(-35px,-55px) !important;
 			}
@@ -42,10 +68,20 @@
 					font-size: 95%;
 				}
 			}
+			@media(max-width:590px){
+				#breads{
+					transform: translate(20px,-40px);
+				}
+				#breads .navbar-nav>li, .navbar-nav {
+					float: left !important;
+				}
+
+				
+			}
 		</style>
 	</head>
-	<body>
-	<div id="wrapper">
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">
+	<div id="wrapper" ng-controller="preguntaList">
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -88,7 +124,25 @@
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
-
+		<div class="row" id="breads">
+			<nav class=" ">
+			      <div class="navbar navbar-default" >
+				        <div class="nav navbar-nav btn-group btn-breadcrumb">
+				          <li ng-repeat="e in examen"><a href="#pagina{{$index + 1}}" class="btn btn-primary"><i class="glyphicon glyphicon-home"></i></a></li>
+				          
+				        </div>
+			      </div>
+			</nav>
+		        <!-- <nav class="navbar btn-group btn-breadcrumb">
+		            <a href="#pagina1" class="btn btn-primary"><i class="glyphicon glyphicon-home"></i></a>
+		            <a href="#pagina2" class="btn btn-rojo">Snippets</a>
+		            <a href="#pagina3" class="btn btn-success">Breadcrumbs</a>
+		            <a href="#pagina4" class="btn btn-warning">Rainbow</a>
+		            <a href="#pagina4" class="btn btn-warning">Rainbow</a>
+		            <a href="#pagina4" class="btn btn-warning">Rainbow</a>
+		            <a href="#pagina4" class="btn btn-warning">Rainbow</a>
+		        </nav> -->
+		</div>
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
@@ -116,46 +170,27 @@
 						</div><!-- /.navbar-collapse -->
 					</nav>
 				</div>
-				<br>
-				<br>
-				<div class="row">
-					<div class="col-xs-12 col-sm-offset-7 col-sm-5 ">
-						<a href="listado-competencias.html" class="col-xs-4  col-sm-offset-3 col-sm-3 caja_der azul">
-							<div  style="text-align: center"><i class="fa fa-arrow-circle-left fa-3x"></i>
-							<h4 class="azul">Regresar</h4>
-							</div>
-						</a>
+				
+				<div class="row caja_der" >
+					<div  class="col-sm-12  pregunta">
 						
-						<div class="col-xs-4  col-sm-3 caja_der azul" style="text-align: center"><i class="fa fa-question fa-3x"></i>
-						<h4 >Ayuda</h4>
-						</div>
-						<div class="col-xs-4  col-sm-3 caja_der azul" style="text-align: center"><i class="fa fa-times fa-3x"></i>
-						<h4 >Cerrar</h4>
-						</div>
-					</div>
-				</div>
-				<div class="row" >
-					<div class="row">
-						<div class="row">
-							<div ng-controller="preguntaList" class="col-sm-12 caja_der pregunta">
-								<div class="well well-lg">
-									<div class="row" ng-repeat="e in examen">
-										<h4 class="col-sm-12"><strong>{{e.competencia}}</strong></h4>
-												<ol class="col-sm-10 col-sm-offset-1" style="text-align:justify">
-													<li ng-repeat="p in e.preguntas">
-														<p>{{p.pregunta}}</p>
-								                        <div  ng-repeat="r in p.respuestas">
-								                        	<div style="font-size: 1.3em; margin-bottom: 20px;">
-									                        	<label>
-									                        	    <input type="radio" ng-checked="r.seleccion" value="{{$index}}" ng-click="seleccion($event)" name="{{currentPage}}" >
-									                        	    {{r.respuesta}}
-									                        	</label>
-								                        	</div>
-								                        </div>
-													</li>
-												</ol>
-									</div>
-								</div>
+						
+						<div class="well well-lg" ng-repeat="e in examen">
+							<div id="pagina{{$index + 1}}" class="row container-fluid" >
+								<h4  class="col-sm-12"><strong>{{e.competencia}}</strong></h4>
+										<ol class="col-sm-10 col-sm-offset-1" style="text-align:justify">
+											<li ng-repeat="p in e.preguntas">
+												<p>{{p.pregunta}}</p>
+						                        <div  ng-repeat="r in p.respuestas">
+						                        	<div style="font-size: 1.3em; margin-bottom: 20px;">
+							                        	<label>
+							                        	    <input type="radio" ng-checked="r.seleccion" value="{{$index}}" ng-click="seleccion($event)" name="{{currentPage}}" >
+							                        	    {{r.respuesta}}
+							                        	</label>
+						                        	</div>
+						                        </div>
+											</li>
+										</ol>
 							</div>
 						</div>
 					</div>
@@ -176,6 +211,22 @@
 		<script src="../js/examenInit.js" type="text/javascript"></script>
 
 		<script type="text/javascript" >
+		if ($(window).width() <= 549) {
+		    if($(window).scrollTop() > 600) {
+		        // the animation that's executed
+		        firstAnimation();
+		    }
+		} else if ($(window).width() > 549 && $(window).width() <= 991) {
+		    if($(window).scrollTop() > 480){
+		        // the animation that's executed
+		        firstAnimation();
+		    }
+		} else {
+		    if ($(window).scrollTop() > 450) {
+		        // the animation that should be executed
+		        firstAnimation();
+		    }
+		}
 		// accion del boton mostrar del navbar
 			$("#mostrar").click(function(){
 		        $("#wrapper").toggleClass("toggled");
