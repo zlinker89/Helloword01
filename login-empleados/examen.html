@@ -22,28 +22,7 @@
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
 		<style type="text/css">
-		#breads .navbar{
-			background: none !important;
-			border: none !important;
-			padding: 0px !important;
-		}
-		#breads .navbar a{
-			background: lightblue !important;
-			border: skyblue !important;
-		}
-		#breads .navbar .active a{
-			background: darkblue !important;
-			color: white;
-		}
-		#breads{
-			background:white;
-			padding-bottom: 0px; 
-			padding-top:50px;
-			transform:translate(6%,-20px);
-			width: 100%;
-			position: fixed;
-			z-index: 69;
-		}
+		
 		#menu, #footer{
 			z-index:70 !important;
 		}
@@ -68,9 +47,9 @@
 					font-size: 95%;
 				}
 			}
-			@media(max-width:590px){
+			@media(max-width:890px){
 				#breads{
-					transform: translate(20px,-40px);
+					transform: translate(30px,-40px);
 				}
 				#breads .navbar-nav>li, .navbar-nav {
 					float: left !important;
@@ -128,11 +107,31 @@
 			<nav class=" ">
 			      <div class="navbar navbar-default" >
 				        <div class="nav navbar-nav btn-group btn-breadcrumb">
-				          <li ng-repeat="e in examen"><a href="#pagina{{$index + 1}}" class="btn btn-primary"><i class="glyphicon glyphicon-home"></i></a></li>
+				          <li ng-repeat="e in examen"><a href="#pagina{{$index + 1}}" class="btn btn{{$index + 1}}">
+				          	{{$index + 1}}
+				          </a></li>
 				          
 				        </div>
 			      </div>
 			</nav>
+			<div ng-show="error" class="col-sm-6">
+				<div class="alert alert-danger">
+					<button type="button" class="close" ng-click="error = false" aria-hidden="true">&times;</button>
+					<strong>ERROR:</strong> Faltan <strong>{{faltan}}</strong> preguntas de <strong>{{npreguntas}} </strong>por marcar.
+				</div>
+			</div>
+			<div ng-show="mensaje" class="col-sm-6">
+				<div class="alert alert-success">
+					<button type="button" class="close" ng-click="mensaje = false" aria-hidden="true">&times;</button>
+					<strong>Datos enviados.</strong>
+				</div>
+			</div>
+			<div ng-show="guardado" class="col-sm-6">
+				<div class="alert alert-warning">
+					<button type="button" class="close" ng-click="guardado = false" aria-hidden="true">&times;</button>
+					<strong>Datos Guardados.</strong>
+				</div>
+			</div>
 		        <!-- <nav class="navbar btn-group btn-breadcrumb">
 		            <a href="#pagina1" class="btn btn-primary"><i class="glyphicon glyphicon-home"></i></a>
 		            <a href="#pagina2" class="btn btn-rojo">Snippets</a>
@@ -175,23 +174,41 @@
 					<div  class="col-sm-12  pregunta">
 						
 						
-						<div class="well well-lg" ng-repeat="e in examen">
-							<div id="pagina{{$index + 1}}" class="row container-fluid" >
+						<div  class="well well-lg btn{{$index + 1}}" ng-repeat="(key, e) in examen">
+							<div id="pagina{{$index + 1}}"></div>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<div  class="row container-fluid " >
 								<h4  class="col-sm-12"><strong>{{e.competencia}}</strong></h4>
 										<ol class="col-sm-10 col-sm-offset-1" style="text-align:justify">
-											<li ng-repeat="p in e.preguntas">
+											<li ng-repeat="(key_p, p) in e.preguntas">
 												<p>{{p.pregunta}}</p>
 						                        <div  ng-repeat="r in p.respuestas">
 						                        	<div style="font-size: 1.3em; margin-bottom: 20px;">
 							                        	<label>
-							                        	    <input type="radio" ng-checked="r.seleccion" value="{{$index}}" ng-click="seleccion($event)" name="{{currentPage}}" >
+							                        	    <input type="radio" ng-checked="r.seleccion"  value="{{key}}" ng-click="seleccion($event)" name="{{key + ' - ' + p.pregunta }}" alt="{{key_p}}" id="{{$index}}" >
 							                        	    {{r.respuesta}}
 							                        	</label>
 						                        	</div>
 						                        </div>
 											</li>
 										</ol>
+
+										<div class="col-xs-2 col-xs-offset-10" >
+				                        	<a class="btn" ng-click="GuardarRespuestas($index)" style="color: green">
+					                        	<div class="col-xs-6"  style="text-align: center;">
+					                        		<i class="fa fa-save fa-4x"></i> <br>
+						                            Guardar
+					                        	</div>
+				                        	</a>
+										</div>
 							</div>
+						</div>
+						<div class="col-xs-2 col-xs-offset-5">
+							<button type="button" ng-click="EnviarRespuestas()" class="btn btn-success btn-lg">Enviar Respuestas</button>
 						</div>
 					</div>
 				</div>

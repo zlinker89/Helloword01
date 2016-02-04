@@ -288,4 +288,56 @@
                 filter: alpha(opacity=0);
             }
             
-            
+            #breads .navbar{
+            	background: none !important;
+            	border: none !important;
+            	padding: 0px !important;
+            }
+            /***************COLORES**********************/
+            #breads .navbar .btn{
+            	color:black;
+            }
+            .btn1{
+            	background: #E0F7FA!important;
+            	border: #E0F7FA !important;
+            }
+            .btn2{
+            	background: #E8F5E9 !important;
+            	border: #E8F5E9 !important;
+            }
+            .btn3{
+            	background: #F0F4C3 !important;
+            	border: #FFE0B2 !important;
+            }
+            .btn4{
+            	background: #FFECB3 !important;
+            	border: #FFECB3 !important;
+            }
+            .btn5{
+            	background: #D7CCC8 !important;
+            	border: #D7CCC8 !important;
+            }
+            .btn6{
+            	background: #FFCCBC !important;
+            	border: #FFCCBC !important;
+            }
+            .btn7{
+            	background: #CFD8DC !important;
+            	border: #CFD8DC !important;
+            }
+            #breads .navbar .active .btn{
+            	background: darkblue !important;
+            	color: white;
+            }
+
+            /*********fin******COLORES**********************/
+
+            #breads{
+            	background:white;
+            	padding-bottom: 0px; 
+            	padding-top:50px;
+            	transform:translate(5%,-20px);
+            	width: 100%;
+            	position: fixed;
+            	z-index: 69;
+            }

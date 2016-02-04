@@ -15,7 +15,7 @@ var examen = [
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	] },
-		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
+		{pregunta: "Actúa con confianza en sí mismo, tomando la iniciativa y decisiones para resolver desafíos o situaciones complejas cuando surjan. ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
@@ -30,28 +30,28 @@ var examen = [
 		{respuesta: "SIEMPRE"}
 	]}]},
 	{competencia: "Enfoque en la Salud, Seguridad y Medio Ambiente", preguntas: [
-	    {pregunta: "Contribuye a generar una cultura orientada al logro de resultados velando por mantener la efectividad de los procesos.", respuestas:[
+	    {pregunta: "1Contribuye a generar una cultura orientada al logro de resultados velando por mantener la efectividad de los procesos.", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	]},
-		{pregunta: "Alinea sus propios planes de trabajo con las metas del área e identifica recursos y planes de acción realistas y necesarios a corto, mediano y largo plazo. ", respuestas:[
+		{pregunta: "1Alin2ea sus propios planes de trabajo con las metas del área e identifica recursos y planes de acción realistas y necesarios a corto, mediano y largo plazo. ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	] },
-		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
+		{pregunta: "1Anali3za posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	] },
-		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
+		{pregunta: "1Anali4za posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
@@ -59,28 +59,28 @@ var examen = [
 		{respuesta: "SIEMPRE"}
 	]}]},
 	{competencia: "Capacidad de aprendizaje y de enseñar a otros", preguntas: [
-	    {pregunta: "Contribuye a generar una cultura orientada al logro de resultados velando por mantener la efectividad de los procesos.", respuestas:[
+	    {pregunta: "2Contribudye a generar una cultura orientada al logro de resultados velando por mantener la efectividad de los procesos.", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	]},
-		{pregunta: "Alinea sus propios planes de trabajo con las metas del área e identifica recursos y planes de acción realistas y necesarios a corto, mediano y largo plazo. ", respuestas:[
+		{pregunta: "2Alinea sfus propios planes de trabajo con las metas del área e identifica recursos y planes de acción realistas y necesarios a corto, mediano y largo plazo. ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	] },
-		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
+		{pregunta: "2Analiza josibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	] },
-		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
+		{pregunta: "2Analiza posibles obsthgháculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
@@ -88,28 +88,28 @@ var examen = [
 		{respuesta: "SIEMPRE"}
 	]}]},
 	{competencia: "Trabajo en Equipo", preguntas: [
-	    {pregunta: "Contribuye a generar una cultura orientada al logro de resultados velando por mantener la efectividad de los procesos.", respuestas:[
+	    {pregunta: "3Contribuye a generar una c6567ultura orientada al logro de resultados velando por mantener la efectividad de los procesos.", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	]},
-		{pregunta: "Alinea sus propios planes de trabajo con las metas del área e identifica recursos y planes de acción realistas y necesarios a corto, mediano y largo plazo. ", respuestas:[
+		{pregunta: "3Alinea sus propios pjfhlanes de trabajo con las metas del área e identifica recursos y planes de acción realistas y necesarios a corto, mediano y largo plazo. ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	] },
-		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
+		{pregunta: "3Analiza posibles obsthfgáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	] },
-		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
+		{pregunta: "3Analiza posibles obstácuooplos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
@@ -117,28 +117,28 @@ var examen = [
 		{respuesta: "SIEMPRE"}
 	]}]},
 	{competencia: "Comunicación Efectiva", preguntas: [
-	    {pregunta: "Contribuye a generar una cultura orientada al logro de resultados velando por mantener la efectividad de los procesos.", respuestas:[
+	    {pregunta: "4Contribuye a generar unlpa cultura orientada al logro de resultados velando por mantener la efectividad de los procesos.", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	]},
-		{pregunta: "Alinea sus propios planes de trabajo con las metas del área e identifica recursos y planes de acción realistas y necesarios a corto, mediano y largo plazo. ", respuestas:[
+		{pregunta: "4Alinea sus propios plankks de trabajo con las metas del área e identifica recursos y planes de acción realistas y necesarios a corto, mediano y largo plazo. ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	] },
-		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
+		{pregunta: "4Analiza posibles obstá{{culos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	] },
-		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
+		{pregunta: "4Analiza posibles obst}áculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
@@ -146,28 +146,28 @@ var examen = [
 		{respuesta: "SIEMPRE"}
 	]}]},
 	{competencia: "Liderazgo - Capacidad de Influenciar", preguntas: [
-	    {pregunta: "Contribuye a generar una cultura orientada al logro de resultados velando por mantener la efectividad de los procesos.", respuestas:[
+	    {pregunta: "5Contribuye a generar una cgultura orientada al logro de resultados velando por mantener la efectividad de los procesos.", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	]},
-		{pregunta: "Alinea sus propios planes de trabajo con las metas del área e identifica recursos y planes de acción realistas y necesarios a corto, mediano y largo plazo. ", respuestas:[
+		{pregunta: "5Alinea sus propios plahnes de trabajo con las metas del área e identifica recursos y planes de acción realistas y necesarios a corto, mediano y largo plazo. ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	] },
-		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
+		{pregunta: "5Analiza posibles obstáculos o barireras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	] },
-		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
+		{pregunta: "5Analiza posibles obstáculos o barpreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
@@ -175,28 +175,28 @@ var examen = [
 		{respuesta: "SIEMPRE"}
 	]}]},
 	{competencia: "Líderazgo -Promotor de Confianza", preguntas: [
-	    {pregunta: "Contribuye a generar una cultura orientada al logro de resultados velando por mantener la efectividad de los procesos.", respuestas:[
+	    {pregunta: "6Contribuye a generar una cultura´´ orientada al logro de resultados velando por mantener la efectividad de los procesos.", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	]},
-		{pregunta: "Alinea sus propios planes de trabajo con las metas del área e identifica recursos y planes de acción realistas y necesarios a corto, mediano y largo plazo. ", respuestas:[
+		{pregunta: "6Alinea sus propios planes de- trabajo con las metas del área e identifica recursos y planes de acción realistas y necesarios a corto, mediano y largo plazo. ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	] },
-		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
+		{pregunta: "6Analiza posibles obstáculos o barrerans que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
 		{respuesta: "CON FRECUENCIA"},
 		{respuesta: "SIEMPRE"}
 	]},
-		{pregunta: "Analiza posibles obstáculos o barreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
+		{pregunta: "6Analiza posibles obstáculos o bamrreras que pueden impedir el logro de los objetivos y propone soluciones para removerlos.  ", respuestas:[
 		{respuesta: "CASI NUNCA"},
 		{respuesta: "EN POCAS OCASIONES"},
 		{respuesta: "NORMALMENTE"},
@@ -206,10 +206,108 @@ var examen = [
 ];
 // esto estara visible en mis apps
 var miApp = angular.module("preguntas",[]);
-miApp.controller("preguntaList", function($scope, $http){
-	$scope.contador = 0;
-	$scope.examen = examen;
+// cargamos lo que tengo guardado
+var hash = localStorage.getItem("competencia") || false;
+if(hash != false){
+	location.href = "#" + hash;
+}
+//localStorage.setItem('respuestas_marcadas',undefined);
 
+miApp.controller("preguntaList", function($scope, $http){
+
+	var respuestas = JSON.parse(localStorage.getItem('respuestas_marcadas')) || [];
+	
+	$scope.contador = 0;
+	//marco solo la primera vez
+	for (var i in respuestas){
+		//console.log(examen[respuestas[i].competencia].preguntas[respuestas[i].idpregunta].respuestas[respuestas[i].idrespuesta]);
+		if(examen[respuestas[i].competencia].preguntas[respuestas[i].idpregunta].respuestas[respuestas[i].idrespuesta] !== undefined){
+			 examen[respuestas[i].competencia].preguntas[respuestas[i].idpregunta].respuestas[respuestas[i].idrespuesta]["seleccion"] = true;
+		}
+	}
+	$scope.examen = examen;
+	var cont = 0;
+	// obtengo la cantidad de preguntas
+	var cantidad_preguntas = 0;
+	for(var i in $scope.examen){
+		cantidad_preguntas += $scope.examen[i].preguntas.length;
+	}
+	
+
+	$scope.seleccion = function (r) {
+		
+		/*
+			Guardo la seleccion de las respuestas
+		*/
+		// deselecciono los demas
+
+		/*
+		// marco la seleccion
+		$scope.examen[r.target.name].preguntas[r.target.value].respuestas[i].respuesta["seleccion"] = true;*/
+		// VERIFICO SI EXISTE
+		for(var j in respuestas){
+			var rr = respuestas[j];
+			if(rr.competencia === r.target.value && rr.idpregunta ===  r.target.alt){
+				rr.respuesta =  $scope.examen[r.target.value].preguntas[r.target.alt].respuestas[r.target.id].respuesta;
+				rr.idrespuesta = r.target.id;
+				cont++;
+			}
+		}
+		// primera vez
+		if(cont == 0){
+			respuestas.push({competencia: r.target.value, idpregunta: r.target.alt , 
+				respuesta: $scope.examen[r.target.value].preguntas[r.target.alt].respuestas[r.target.id].respuesta, 
+				idrespuesta: r.target.id});
+			$scope.faltan -= 1;
+		}else{
+			cont = 0;
+		}
+		
+		
+	};
+
+	$scope.GuardarRespuestas = function (pagina) {
+		localStorage.setItem("competencia",("pagina" + (pagina + 1)));
+		localStorage.setItem('respuestas_marcadas',JSON.stringify(respuestas));
+		$scope.error = false;
+		$scope.mensaje = false;
+		$scope.guardado = true;
+	};
+
+	$scope.EnviarRespuestas = function () {
+		// obtengo la cantidad de preguntas
+		
+		$scope.faltan = cantidad_preguntas - respuestas.length;
+		$scope.npreguntas = cantidad_preguntas;
+		// verifico si la cantidad es igual a la de las respuestas marcadas
+		if(cantidad_preguntas === respuestas.length){
+			// aqui envio las respuestas
+			console.log(respuestas);
+			// mensajes
+			$scope.error = false;
+			$scope.mensaje = true;
+			$scope.guardado = false;
+			// reiniciamos todo
+			localStorage.setItem("competencia", "pagina1");
+			localStorage.setItem('respuestas_marcadas',JSON.stringify([]));
+			// aqui lo cambio de vsita
+			location.href = "#pagina1";
+			// desmarco todos
+			for (var i in respuestas){
+				//console.log(examen[respuestas[i].competencia].preguntas[respuestas[i].idpregunta].respuestas[respuestas[i].idrespuesta]);
+				if(examen[respuestas[i].competencia].preguntas[respuestas[i].idpregunta].respuestas[respuestas[i].idrespuesta] !== undefined){
+					 examen[respuestas[i].competencia].preguntas[respuestas[i].idpregunta].respuestas[respuestas[i].idrespuesta]["seleccion"] = false;
+				}
+			}
+			respuestas = [];
+			$scope.examen = examen;
+		}else{
+			$scope.error = true;
+			$scope.mensaje = false;
+			$scope.guardado = false;
+
+		}
+	};
 	// // init
 	// $scope.sortingOrder = sortingOrder;
 	// $scope.reverse = false;
