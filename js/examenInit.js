@@ -227,6 +227,12 @@ miApp.controller("preguntaList", function($scope, $http){
 	}
 	$scope.examen = examen;
 	var cont = 0;
+	// obtengo la cantidad de preguntas
+	var cantidad_preguntas = 0;
+	for(var i in $scope.examen){
+		cantidad_preguntas += $scope.examen[i].preguntas.length;
+	}
+	
 
 	$scope.seleccion = function (r) {
 		
@@ -252,6 +258,7 @@ miApp.controller("preguntaList", function($scope, $http){
 			respuestas.push({competencia: r.target.value, idpregunta: r.target.alt , 
 				respuesta: $scope.examen[r.target.value].preguntas[r.target.alt].respuestas[r.target.id].respuesta, 
 				idrespuesta: r.target.id});
+			$scope.faltan -= 1;
 		}else{
 			cont = 0;
 		}
@@ -262,6 +269,44 @@ miApp.controller("preguntaList", function($scope, $http){
 	$scope.GuardarRespuestas = function (pagina) {
 		localStorage.setItem("competencia",("pagina" + (pagina + 1)));
 		localStorage.setItem('respuestas_marcadas',JSON.stringify(respuestas));
+		$scope.error = false;
+		$scope.mensaje = false;
+		$scope.guardado = true;
+	};
+
+	$scope.EnviarRespuestas = function () {
+		// obtengo la cantidad de preguntas
+		
+		$scope.faltan = cantidad_preguntas - respuestas.length;
+		$scope.npreguntas = cantidad_preguntas;
+		// verifico si la cantidad es igual a la de las respuestas marcadas
+		if(cantidad_preguntas === respuestas.length){
+			// aqui envio las respuestas
+			console.log(respuestas);
+			// mensajes
+			$scope.error = false;
+			$scope.mensaje = true;
+			$scope.guardado = false;
+			// reiniciamos todo
+			localStorage.setItem("competencia", "pagina1");
+			localStorage.setItem('respuestas_marcadas',JSON.stringify([]));
+			// aqui lo cambio de vsita
+			location.href = "#pagina1";
+			// desmarco todos
+			for (var i in respuestas){
+				//console.log(examen[respuestas[i].competencia].preguntas[respuestas[i].idpregunta].respuestas[respuestas[i].idrespuesta]);
+				if(examen[respuestas[i].competencia].preguntas[respuestas[i].idpregunta].respuestas[respuestas[i].idrespuesta] !== undefined){
+					 examen[respuestas[i].competencia].preguntas[respuestas[i].idpregunta].respuestas[respuestas[i].idrespuesta]["seleccion"] = false;
+				}
+			}
+			respuestas = [];
+			$scope.examen = examen;
+		}else{
+			$scope.error = true;
+			$scope.mensaje = false;
+			$scope.guardado = false;
+
+		}
 	};
 	// // init
 	// $scope.sortingOrder = sortingOrder;
