@@ -22,11 +22,11 @@
 		<![endif]-->
 		<style type="text/css">
 			.submenu{
-				transform:translate(-35px,-55px) !important;
+				transform:translate(-35px,-105px) !important;
 			}
 			@media(max-width: 940px){
 				.submenu{
-					transform:translate(0px,-55px) !important;
+					transform:translate(0px,-105px) !important;
 				}
 				h4{
 					font-size: 95%;
@@ -111,25 +111,25 @@
 						<div class="row" id="iconos_der">
 							<div class="col-xs-8 col-xs-offset-2 icon-menu">
 								<div class="centrar-icons">
-									<a href="explicacion.html">
+									<a href="explicacion.html" onclick="SetPrueba('autoevaluacion')">
 										<div class="col-xs-6 col-sm-3 blanco">
 											<i class="fa fa-street-view fa-5x"></i>
 											<h4 class="blanco">Autoevaluación</h4>
 										</div>
 									</a>
-									<a  href="explicacion.html">	
+									<a  href="explicacion.html" onclick="SetPrueba('jefe')">	
 										<div class="col-xs-6 col-sm-3 blanco">
 											<i class="fa fa-male fa-5x"></i>
 											<h4 class="blanco">Jefe</h4>
 										</div>
 									</a>
-									<a  href="explicacion.html">	
+									<a  href="explicacion.html" onclick="SetPrueba('par')">	
 										<div class="col-xs-6 col-sm-3 blanco">
 											<i class="fa fa-angellist fa-5x"></i>
 											<h4 class="blanco">Par</h4>
 										</div>
 									</a>
-									<a  href="explicacion.html">	
+									<a  href="explicacion.html" onclick="SetPrueba('liderados')">	
 										<div class="col-xs-6 col-sm-3 blanco">
 											<i class="fa fa-users fa-5x"></i>
 											<h4 class="blanco">Liderados</h4>
@@ -170,6 +170,9 @@
 		<script src="../js/angular.min.js"></script>
 		<script src="../js/app.js"></script>
 		<script type="text/javascript" >
+		function SetPrueba(p){
+			localStorage.setItem("tprueba",p);
+		}
 		// accion del boton mostrar del navbar
 			$("#mostrar").click(function(){
 		        $("#wrapper").toggleClass("toggled");

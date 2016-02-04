@@ -1,4 +1,5 @@
 // valor temporal
+var tprueba = localStorage.getItem("tprueba");
 var examen = [
 	{competencia: "Orientación a Resultados", preguntas: [
 	    {pregunta: "Contribuye a generar una cultura orientada al logro de resultados velando por mantener la efectividad de los procesos.", respuestas:[
@@ -207,15 +208,15 @@ var examen = [
 // esto estara visible en mis apps
 var miApp = angular.module("preguntas",[]);
 // cargamos lo que tengo guardado
-var hash = localStorage.getItem("competencia") || false;
+var hash = localStorage.getItem("competencia" + tprueba) || false;
 if(hash != false){
 	location.href = "#" + hash;
 }
-//localStorage.setItem('respuestas_marcadas',undefined);
+//localStorage.setItem(tprueba,undefined);
 
 miApp.controller("preguntaList", function($scope, $http){
 
-	var respuestas = JSON.parse(localStorage.getItem('respuestas_marcadas')) || [];
+	var respuestas = JSON.parse(localStorage.getItem(tprueba)) || [];
 	
 	$scope.contador = 0;
 	//marco solo la primera vez
@@ -267,8 +268,8 @@ miApp.controller("preguntaList", function($scope, $http){
 	};
 
 	$scope.GuardarRespuestas = function (pagina) {
-		localStorage.setItem("competencia",("pagina" + (pagina + 1)));
-		localStorage.setItem('respuestas_marcadas',JSON.stringify(respuestas));
+		localStorage.setItem("competencia" + tprueba,("pagina" + (pagina + 1)));
+		localStorage.setItem(tprueba,JSON.stringify(respuestas));
 		$scope.error = false;
 		$scope.mensaje = false;
 		$scope.guardado = true;
@@ -288,8 +289,8 @@ miApp.controller("preguntaList", function($scope, $http){
 			$scope.mensaje = true;
 			$scope.guardado = false;
 			// reiniciamos todo
-			localStorage.setItem("competencia", "pagina1");
-			localStorage.setItem('respuestas_marcadas',JSON.stringify([]));
+			localStorage.setItem("competencia" + tprueba, "pagina1");
+			localStorage.setItem(tprueba,JSON.stringify([]));
 			// aqui lo cambio de vsita
 			location.href = "#pagina1";
 			// desmarco todos
