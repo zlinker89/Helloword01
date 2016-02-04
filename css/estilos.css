@@ -59,6 +59,9 @@
 
 			/*-------------------------COLORES--------------------------------------------------*/
 			
+			.naranja{
+			    color: #ffd966 !important;
+			}
 			.purple{
 				background: #b4a7d6 !important;
  			}
@@ -340,4 +343,9 @@
             	width: 100%;
             	position: fixed;
             	z-index: 69;
+            }
+            
+            a:link   {   
+                box-decoration-break: none;
+                text-decoration:none;   
             }

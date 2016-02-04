@@ -4,78 +4,21 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Title Page</title>
+        <title>Reporte</title>
 
         <!-- Bootstrap CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
         <link href="../css/side-wraper.css" rel="stylesheet">
-
+        <!--Mis estilos-->
+        <link href="../css/estilos.css" rel="stylesheet">
+        <link href="../css/menu.css" rel="stylesheet">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
                 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
                 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <style type="text/css">
-            .icono_grandes{
-                font-size: 10em !important;
-            }
-            #caja, #izq,#der{
-                height: 100vh;
-            }
-            #iconos_der{
-                height: auto;
-                float: auto;
-                padding: auto;
-
-            }
-            .caja_izq{
-                margin-top: 30px;
-            }
-            .caja_der{
-                margin-top: 80px;
-            }
-            .submenu{
-                margin-right: 5px;
-            }
-            .navbar{
-                background: #2b78e4;
-            }
-            .navbar a, .navbar h2{
-                color: white !important;
-            }
-            @media(max-width:990px){
-                #izq{
-                    display: block;
-                }
-            }
-            .navbar-right{
-                margin-right: 20px;
-            }
-            #icono_user{
-                color: white;
-                margin-top: 10px;
-                font-size: 3em;
-            }
-            h4{
-                color: black !important;
-            }
-            /*colores*/
-            .morado{
-                color: #8e7cc3 !important;
-            }
-            .azul{
-                color: #085394 !important;
-            }
-            .naranja{
-                color: #ffd966 !important;
-            }
-            a:link   {   
-                box-decoration-break: none;
-                text-decoration:none;   
-            }  
-        </style>
     </head>
     <body>
         <div id="wrapper">
@@ -123,7 +66,7 @@
             <!-- Page Content -->
             <div id="page-content-wrapper">
                 <div class="container-fluid">
-                    <div class="col-xs-12">
+                    <div class="row" id="menu">
                         <nav class="navbar navbar-default" role="navigation">
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <div class="navbar-header">
@@ -148,7 +91,16 @@
                         </nav>
                     </div>
                     
+                    <div class="row">
+                        <div class="col-sm-12 caja_der">
+                            <div id="GraficoGoogleChart-ejemplo-1" style="width: 800px; height: 600px">
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
                             <!-- jQuery -->
 <script src="../js/jquery.js"></script>
 <!-- Bootstrap JavaScript -->
@@ -187,10 +139,8 @@
      ).draw(data, options);
    }
  </script> 
-<body>
 
-<div id="GraficoGoogleChart-ejemplo-1" style="width: 800px; height: 600px">
-</div>
+
 
                         
          </body>
