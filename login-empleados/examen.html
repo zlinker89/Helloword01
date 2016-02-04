@@ -165,7 +165,7 @@
 						                        <div  ng-repeat="r in p.respuestas">
 						                        	<div style="font-size: 1.3em; margin-bottom: 20px;">
 							                        	<label>
-							                        	    <input type="radio" ng-checked="r.seleccion"  value="{{key}}" ng-click="seleccion($event)" name="{{key_p}}" id="{{$index}}" >
+							                        	    <input type="radio" ng-checked="r.seleccion"  value="{{key}}" ng-click="seleccion($event)" name="{{key + ' - ' + p.pregunta }}" alt="{{key_p}}" id="{{$index}}" >
 							                        	    {{r.respuesta}}
 							                        	</label>
 						                        	</div>
