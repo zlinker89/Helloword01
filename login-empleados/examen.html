@@ -108,7 +108,7 @@
 			      <div class="navbar navbar-default" >
 				        <div class="nav navbar-nav btn-group btn-breadcrumb">
 				          <li ng-repeat="e in examen"><a href="#pagina{{$index + 1}}" class="btn btn{{$index + 1}}">
-				          	{{$index + 1}}
+				          	<span class="hidden-xs hidden-sm">comp</span> {{$index + 1}}
 				          </a></li>
 				          
 				        </div>
@@ -174,7 +174,7 @@
 					<div  class="col-sm-12  pregunta">
 						
 						
-						<div  class="well well-lg btn{{$index + 1}}" ng-repeat="(key, e) in examen">
+						<div  class="well well-lg btn-{{$index + 1}}" ng-repeat="(key, e) in examen">
 							<div id="pagina{{$index + 1}}"></div>
 							<br>
 							<br>
