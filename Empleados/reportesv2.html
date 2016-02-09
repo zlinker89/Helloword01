@@ -242,15 +242,155 @@
                     </div>
               </div>
               </div>
-              <footer>
-                <div class="row col-sm-12 col-sx-11">
-                  
-                </div>
-              </footer>
              <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation"></nav></div>
 
-       
- 
+             <!--aqui comienza reportes-->
+             <div class="row" >
+                        <div   class="row"; align="center">
+                             <div style="padding-left:70vh" class="col-xs-9 col-sm-3  " style="text-align: center;padding:10px; color: #ffd966;float-left"><a class="naranja" data-toggle="modal" data-target="#myModals" href=""><i  class="fa fa-bar-chart icono_grandes"></i><h4 >Reportes Generales</h4></a>
+                            </div>
+                             <div style="padding-left:40vh" class="col-xs-9 col-sm-3" style="text-align:center;padding:10px; color: #ffd966;"> <a class="naranja" data-toggle="modal" data-target="#myModals"  href=""><i class="fa fa-area-chart icono_grandes"></i><h4 > Reportes de Periodos</h4></a>
+                             </div>  
+                       </div>
+                     </div>
+                  
+
+
+
+                     <!--modales de item-->
+                        <div class="modal fade" id="myModals" role="dialog" data-keyboard="false" data-backdrop>
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                                    </div>
+                                   
+                                      <div class="col-xs-12 col-sm-4 caja_der" style="text-align: center; color: #ffd966"><a class="naranja" data-toggle="modal" data-target="#Rdepartamento" href=""><i  class="fa fa-building icono_grandes"></i>   <h4 >Reportes por  Departamentos</h4></a> 
+                                     </div>
+                                      <div class="col-xs-12 col-sm-4 caja_der " style="text-align: center; color: #ffd966"><a class="naranja" data-toggle="modal" data-target="#Rarea" href=""><i  class="fa fa-building-o icono_grandes"></i>   <h4 >Reportes por Area</h4></a> 
+
+                                          </div>
+                                      <div class="col-xs-12 col-sm-4 caja_der " style="text-align: center; color: #ffd966"><a class=" naranja" data-toggle="modal" data-target="#Rusuarios" href=""><i  class="fa fa-user icono_grandes"></i>   <h4 >Reportes por Usuarios</h4></a> 
+                                     </div>
+                                    <div class="modal-footer">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+<!--modales-->
+<div class="modal fade" id="Rdepartamento" role="dialog" data-keyboard="false" data-backdrop>
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Selecione el departamento en el cual desea obtener informacion</h4>
+            </div>
+            <div class="modal-body">
+                <label>Departamento</label>
+                <select class="form-control">
+                    <option value="volvo">Valledupar</option>
+                    <option value="saab">Mina Pribenow</option>
+                    <option value="mercedes">Sede Bogota</option>
+                    <option value="audi">Puerto</option>
+                </select>
+                <br>
+                <br>
+                <br>
+                <br> 
+                <br>
+                <br>
+            </div>
+            <div class="modal-footer">
+               <button class="btn btn-primary">continuar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="Rarea" role="dialog" data-keyboard="false" data-backdrop>
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Selecione el Area en el cual desea obtener informacion</h4>
+            </div>
+            <div class="modal-body">
+                <label>Departamento</label>
+                <select class="form-control">
+                    <option value="valledupar">Valledupar</option>
+                    <option value="mina">Mina Pribenow</option>
+                    <option value="bogota">Sede Bogota</option>
+                    <option value="puerto">Puerto</option>
+                </select>
+                <br>
+                <br>
+                <label>Area</label>
+                <select class="form-control">
+                    <option value="Administrativa">Administrativa</option>
+                    <option value="operativa">Operativa</option>
+
+                </select>
+                <br>
+                <br>
+                <div class="w3-padding w3-white notranslate">
+
+                    <table class="table">
+                        <tr>
+                            <td>Fecha de Inicio</td>
+                            <td><input class="form-control" type="date" name="fechaI" step="1" min="2016-01-01" max="2200-12-31" ></td> 
+                            <td align="center">  Fecha de finalizacion</td>
+                            <td><input class="form-control" type="date" name="fechaF" step="1" min="2016-01-01" max="2200-12-31" ></td>
+                        </tr>
+                    </table>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" >Continuar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="Rusuarios" role="dialog" data-keyboard="false" data-backdrop>
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Digite el usuario  del cual desea obtener informacion</h4>
+            </div>
+            <div class="modal-body">
+            <br>
+                <label>Usuarios</label>
+                <input type="text" class="form-control" id="usr">
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary">continuar</button>
+            </div>
+
+
+</div>
+</div>
+</div>
+<!--iconos de ayudas-->
+                <div class="row" style="padding-top:20vh;">
+                    <div class="col-xs-12 col-sm-offset-6  col-sm-5 submenu">
+                        <div class="col-xs-6  col-sm-offset-6 col-sm-3 caja_der azul" style="text-align: center"><i class="fa fa-question fa-3x"></i>
+                            <h4 >Ayuda</h4>
+                        </div>
+                        <div class="col-xs-6  col-sm-3 caja_der azul" style="text-align: center"><i class="fa fa-times fa-3x"></i>
+                            <h4 >Cerrar</h4>
+                        </div>
+                    </div>
+                </div>
+
         <!-- jQuery -->
         <script src="../js/jquery.js"></script>
         <!-- Bootstrap JavaScript -->
@@ -273,5 +413,6 @@
                 $("#wrapper").toggleClass("toggled");
             });
         </script>
+
 </body>
 </html>

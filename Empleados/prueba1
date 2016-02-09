@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="miApp">
+
+<head>
+          <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Modulo Empleados</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
+        <link href="../css/side-wraper.css" rel="stylesheet">
+        <!--Mis estilos-->
+        <link href="../css/estilos.css" rel="stylesheet">
+        <link href="../css/menu.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style type="text/css">
+            .add-on{
+                transform:translate(-50px,8px) !important;
+            }
+            #wraper ,#sidebar-wrapper{
+
+            box-shadow: 01px 0px 01px   black;
+            border: hidden;
+
+
+            }
+            navbar{
+                background: # 80CBC4;
+            }
+        </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+       <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+
+             <ul class="sidebar-nav">
+
+                <li class="sidebar-brand">
+                    <a href="#menu-toggle"  id="menu-toggle" style="text-align: center;">
+                        <button class="btn btn-primary" >Cerrar</button>
+                    </a>
+                </li>
+            <li><img  src= "img/logo.png"  alt= "..."  class= "img-circle"  width="210px" height="250px"> </li>
+                <li>
+                    <a href="../loginadmin/evaluacion.html">
+                        <div class="col-xs-12 caja_izq row-centered"><i class="fa fa-pencil fa-4x"></i>
+                        <h4 >Evaluacion</h4>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="indexempleado.html" class="verde">
+                        <div class="col-xs-12 caja_izq row-centered"><i class="fa fa-users fa-4x"></i>
+                        <h4 >Empleados</h4>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="../periodos/periodos.html" class="morado">
+                        <div class="col-xs-12 caja_izq row-centered"><i class="fa fa-clock-o fa-4x"></i>
+                        <h4 >Periodo</h4>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="../reportes/reportes.html" class="amarillo">
+                        <div class="col-xs-12 caja_izq row-centered"><i class="fa fa-bar-chart fa-4x"></i>
+                        <h4 >Reportes</h4>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-sm-9">
+      <h4><small>RECENT POSTS</small></h4>
+      <hr>
+      <h2>I Love Food</h2>
+      <h5><span class="glyphicon glyphicon-time"></span> Post by Jane Dane, Sep 27, 2015.</h5>
+      <h5><span class="label label-danger">Food</span> <span class="label label-primary">Ipsum</span></h5><br>
+      <p>Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <br><br>
+      
+      <h4><small>RECENT POSTS</small></h4>
+      <hr>
+      <h2>Officially Blogging</h2>
+      <h5><span class="glyphicon glyphicon-time"></span> Post by John Doe, Sep 24, 2015.</h5>
+      <h5><span class="label label-success">Lorem</span></h5><br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <hr>
+
+      <h4>Leave a Comment:</h4>
+      <form role="form">
+        <div class="form-group">
+          <textarea class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <br><br>
+      
+      <p><span class="badge">2</span> Comments:</p><br>
+      
+      <div class="row">
+        <div class="col-sm-2 text-center">
+          <img src="bandmember.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+        </div>
+        <div class="col-sm-10">
+          <h4>Anja <small>Sep 29, 2015, 9:12 PM</small></h4>
+          <p>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <br>
+        </div>
+        <div class="col-sm-2 text-center">
+          <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+        </div>
+        <div class="col-sm-10">
+          <h4>John Row <small>Sep 25, 2015, 8:25 PM</small></h4>
+          <p>I am so happy for you man! Finally. I am looking forward to read about your trendy life. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <br>
+          <p><span class="badge">1</span> Comment:</p><br>
+          <div class="row">
+            <div class="col-sm-2 text-center">
+              <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+            </div>
+            <div class="col-xs-10">
+              <h4>Nested Bro <small>Sep 25, 2015, 8:28 PM</small></h4>
+              <p>Me too! WOW!</p>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>
