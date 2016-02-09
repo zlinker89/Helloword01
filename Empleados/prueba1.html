@@ -74,24 +74,21 @@
             }
             .icono{
                color:#DFAB16;
-               margin-bottom: 30px;
-               
             }
               .iconov{
                color:#DFAB16;
-               margin-bottom: 30px;
             }
              .iconop{
                color:#DFAB16;
-               margin-bottom: 30px;
             }
              .iconor{
                color:#DFAB16;
-               margin-bottom: 30px;
+               
             }
             .img-circle{
                box-shadow: 01px 0px 01px   black; 
-               padding: 15px;
+               padding:25px;
+               margin-bottom: 40px;
             }
             img{
                 padding:10px;
@@ -111,11 +108,33 @@
               p{
                 color:black;
               }
-              .fila{
-                border:1px solid !important ;
-                border-color: #EEEEEE;
-                padding-top:20px;
+              .filas{
+               
                 padding-bottom:0;
+              }
+              .filas:hover{
+                background-color:#F5F5F5;
+              }
+              .icono:hover{
+                color:#184B5E;
+              }
+              .iconor:hover{
+                color:#184B5E;
+              }
+              .iconov:hover{
+               color:#184B5E;
+              }
+
+              .iconop:hover{
+               color:#184B5E;
+              }
+              
+              .iconor:hover{
+               color:#184B5E;
+              }
+                
+              .leyenda:hover{
+                background-color: blue;
               }
         </style>
     </head>
@@ -137,65 +156,62 @@
                     </a>
                 </li>
 
-            <li style="margin-right:30px; margin-top:30px; ">
-                 <img  src= "img/logo.png"  alt= "..."  class= "img-circle"  width="170px" height="210px" >
+                   <li >
+                        <div style="margin-right:30px; margin-top:30px;" class="row col-xs-12 col-sm-12 col-md-12">
+                        <img  src= "img/logo.png"  alt= "..."  class= "img-circle"  width="200px" height="200px" >
+                        </div>
                  </li>
-                <li>
-                    <br>
+                
+                <li class="filas">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-4 icono" >
+                        <div style="padding:10px" class="col-xs-6 col-sm-3  col-md-3 icono">
                             <i class="fa fa-pencil fa-2x"></i>
                         </div>
-
-                        <div class="col-xs-6 col-sm-8" clas="leyenda">
+                                                            
+                        <div style="padding:10px" class="col-xs-6 col-sm-8  col-md-9" class="leyenda">
                             <h5> Evaluacion</h5>
                         </div>
                     </div>
                     
                 </li>
-
-                
                 <li class="filas">
                       <div class="row">
-                        <div class="col-xs-6 col-sm-4 iconov" >
+                        <div style="padding:10px"  class="col-xs-6 col-sm-3 iconov" >
                             <i class="fa fa-users fa-2x"></i>
                         </div>
 
-                        <div class="col-xs-6 col-sm-8" clas="leyenda">
+                        <div style="padding:10px" class="col-xs-6 col-sm-8" class="leyenda">
                             <h5> Empleados</h5>
                         </div>
                     </div>
                     
                 </li>
 
-                   <li>
+                <li class="filas">
                       <div class="row">
-                        <div class="col-xs-6 col-sm-4 iconop" >
+                        <div style="padding:10px"  class="col-xs-6 col-sm-3 iconop" >
 
                             <i class="fa fa-clock-o fa-2x"></i>
                         </div>
 
-                        <div class="col-xs-6 col-sm-8" clas="leyenda">
+                        <div  style="padding:10px" class="col-xs-6 col-sm-8" class="leyenda">
                             <h5> Periodo</h5>
                         </div>
                     </div>
-                    
-                </li>
+                 </li>
 
-                  <li>
+                  <li class="filas">
                       <div class="row">
-                        <div class="col-xs-6 col-sm-4 iconor" >
+                        <div style="padding:10px" class="col-xs-6 col-sm-3 iconor" >
                             <i class="fa fa-bar-chart fa-2x"></i>
                         </div>
 
-                        <div class="col-xs-6 col-sm-8" clas="leyenda">
+                        <div style="padding:10px" class="col-xs-6 col-sm-8" class="leyenda">
                             <h5> Reportes</h5>
                         </div>
                     </div>
-                    
-                </li>
-                       
-            </ul>
+                  </li>
+              </ul>
         </div>
     </div>
 </div>
@@ -211,7 +227,8 @@
                             </button>
                             
                         </div>
-                        <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+                        <ul class="nav navbar-nav navbar-
+                        right hidden-xs hidden-sm">
                             <li>
                                 <span class="col-xs-8" id="nombre"><h5>Maria perez</h5> </span>
                                 <span class="col-xs-4 col-sm-4" id=""><img src= "img/emma.png"  alt= "..."  class= "img-circle" width="45px;"  ></span>
@@ -222,80 +239,10 @@
                             
                         </div><!-- /.navbar-collapse -->
                     </nav>
-                    
-              
-              
-                 
-                    <div class="col-sm-9 col-sm-offset-2 " style="padding-left:50px;">
-                          <div  id="carousel-1" class="carousel slide" data-ride="carousel">
-            <!-- Indicadores-->
-             <ol class="carousel-indicators">
-            <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-1" data-slide-to="1"></li>
-            <li data-target="#carousel-1" data-slide-to="2"></li>   </ol>
-            <!--contenedor de los slider -->
-            <div class="carousel-inner" role="listbox">
-              <div class="item active">
-                <img src="img/logo2.png" class="img-resposive" alt="">
-                <div class="carousel-caption">
-                  
-                  <p>Bienvenido al sistema de evaluacion 360</p>
-                </div>
+                    </div>
               </div>
-
-
-                <div class="item">
-                <img src="img/img.png" class="img-resposive" alt="">
-                <div class="carousel-caption">
-                 
-                </div>
               </div>
-
-              <div class="item">
-                <img src="img/img1.png" class="img-resposive" alt="">
-                <div class="carousel-caption">
-                 
-                </div>
-              </div>
-            </div>
-
-            <!-- Controles-->
-            <a href="#carousel-1" class="left carousel-control" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Anterior</span>
-            </a>
-            <a href="#carousel-1" class="right carousel-control" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Siguiente</span>
-            </a>
-          </div>
-        </div>
-      </div>
-                   
-                  </div>
-   
-              
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-  
-    </li>
-  </ul>
-</nav>
-    </div>
+             <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation"></nav></div>
 
  
         <!-- jQuery -->
