@@ -1,7 +1,5 @@
 			/*-------------------------ICONOS--------------------------------------------------*/
-			.etiquetas{
-				float: right;
-			}
+
 			.icono_grandes{
 				font-size: 2em !important;
 			}
@@ -40,8 +38,13 @@
 			/*--------------FIN-----------CAJAS--------------------------------------------------*/
 
 			/*-------------------------MENUS--------------------------------------------------*/
+			.etiquetas{
+				float: right;
+				font-size: 1em !important;
+				transform:translate(-20px,0px);
+			}
 			.submenu{
-				margin-right: 5px;
+				transform: translate(-60px,-60px);
 			}
 			.navbar h4{
 				margin-top: 15px;
@@ -89,7 +92,7 @@
 				text-decoration: none !important;
 			}
 			.amarillo{
-				color: #ffd966;
+				color: #dfab16;
 				text-decoration: none !important;
 			}
 			.blanco{
@@ -112,7 +115,7 @@
 				text-decoration: none !important;
 			}
 			.amarillo:hover{
-				color: #bf9000 !important;
+				color: #184b5e !important;
 				text-decoration: none !important;
 			}
 			.morado:hover{
@@ -128,6 +131,7 @@
 			/*-------------------------CENTRAR DIVS--------------------------------------------------*/
 			.row-centered {
 			    text-align:center;
+				margin-left: -15%;			    
 			}
 			.col-centered {
 			    display:inline-block;
@@ -241,6 +245,9 @@
 				}
 				.sidebar-brand{
 					display: block !important;
+				}
+				.submenu{
+					transform: translate(0px,-60px);
 				}
 			}
 			/*--------------FIN-----------RESPONSIVE--------------------------------------------------*/
@@ -399,11 +406,11 @@
             }
 
             #footer{
-            	position: absolute;
+            	position: fixed;
             	bottom: 0;
             	left: 0;
             	right: 0;
-            	height: 30px;
-            	background: blue;
-            	z-index: 71;
+            	height: 8%;
+            	background: #184b5e;
+            	z-index: 10071;
             }
