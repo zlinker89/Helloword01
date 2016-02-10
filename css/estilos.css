@@ -1,11 +1,14 @@
 			/*-------------------------ICONOS--------------------------------------------------*/
+			.etiquetas{
+				float: right;
+			}
 			.icono_grandes{
-				font-size: 6.4em !important;
+				font-size: 2em !important;
 			}
 			#icono_user{
 				color: white;
 				margin-top: 10px;
-				font-size: 3em;
+				font-size: 1.5em;
 			}
 			#iconos_der{
 				height: 70vh;
@@ -31,6 +34,8 @@
 			}
 			#sidebar-wrapper, .sidebar-nav{
 				overflow: hidden !important;
+				text-align: center;
+				box-shadow: 2px -10px 3px black;
 			}
 			/*--------------FIN-----------CAJAS--------------------------------------------------*/
 
@@ -38,7 +43,8 @@
 			.submenu{
 				margin-right: 5px;
 			}
-			.navbar h2{
+			.navbar h4{
+				margin-top: 15px;
 				color: white !important;
 			}
 			#menu{
@@ -382,4 +388,22 @@
             a:link   {   
                 box-decoration-break: none;
                 text-decoration:none;   
+            }
+            .img-circle{
+               box-shadow: 01px 0px 01px   black; 
+               padding:25px;
+               margin-bottom: 40px;
+            }
+            img{
+                padding:10px;
+            }
+
+            #footer{
+            	position: absolute;
+            	bottom: 0;
+            	left: 0;
+            	right: 0;
+            	height: 30px;
+            	background: blue;
+            	z-index: 71;
             }
