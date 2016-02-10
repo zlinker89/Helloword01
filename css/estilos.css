@@ -67,7 +67,9 @@
 
 
 			/*-------------------------COLORES--------------------------------------------------*/
-			
+			.txt-blanco{
+				color: white;
+			}
 			.naranja{
 			    color: #ffd966 !important;
 			}
