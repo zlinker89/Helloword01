@@ -42,6 +42,7 @@
 				float: right;
 				font-size: 1em !important;
 				transform:translate(-20px,0px);
+				width: 90px;
 			}
 			.submenu{
 				transform: translate(-60px,-60px);
