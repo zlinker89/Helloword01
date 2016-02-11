@@ -11,6 +11,10 @@
 			#iconos_der{
 				height: 70vh;
 			}
+
+			.caja_der.azul{
+				color: yellow;
+			}
 			/*-------------FIN------------ICONOS--------------------------------------------------*/
 
 			/*-------------------------CAJAS--------------------------------------------------*/
@@ -26,6 +30,7 @@
 			}
 			.caja_der{
 				margin-top: 80px;
+
 			}
 			.sidebar-brand{
 				display: none;
@@ -46,6 +51,7 @@
 			}
 			.submenu{
 				transform: translate(-60px,-60px);
+
 			}
 			.navbar h4{
 				margin-top: 15px;
