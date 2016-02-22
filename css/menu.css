@@ -3,10 +3,9 @@
 }
 .navbar-default {
     font-size: 14px;
-    background-color:#22859F;
+    background-color: rgba(24, 75, 94, 1);
     border-width: 1px;
     border-radius: 4px;
-    box-shadow:1px 2px 10px -1px rgba(0,0,0,0.75);
 }
 .navbar-default .navbar-nav>li>a {
     color: rgba(255, 255, 255, 1);
