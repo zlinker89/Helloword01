@@ -1,7 +1,9 @@
 			/*-------------------------ICONOS--------------------------------------------------*/
-
+			body{
+				background-color: #F9F9F9;
+			}
 			.icono_grandes{
-				font-size: 2em !important;
+				font-size: 1.5em !important;
 			}
 			#icono_user{
 				color: white;
@@ -23,10 +25,17 @@
 			}
 			#caja, #izq,#der{
 				height: 100vh;
+
 			}
 			
 			.caja_izq{
 				margin-top: 5%;
+				
+			}
+			.caja_izq:hover{
+				background-color:#22859F;
+				width: 290px;
+				color: #fff;
 			}
 			.caja_der{
 				margin-top: 80px;
@@ -35,18 +44,23 @@
 			.sidebar-brand{
 				display: none;
 			}
+
+
 			#sidebar-wrapper, .sidebar-nav{
+				background-color: #ffffff;
 				overflow: hidden !important;
 				text-align: center;
 				box-shadow: 2px -10px 3px black;
 			}
+
+
 			/*--------------FIN-----------CAJAS--------------------------------------------------*/
 
 			/*-------------------------MENUS--------------------------------------------------*/
 			.etiquetas{
 				float: right;
 				font-size: 1em !important;
-				transform:translate(-20px,0px);
+				transform:translate(-38px,0px);
 				width: 90px;
 			}
 			.submenu{
@@ -101,7 +115,7 @@
 				text-decoration: none !important;
 			}
 			.amarillo{
-				color: #dfab16;
+				color: #9E9E9E;
 				text-decoration: none !important;
 			}
 			.blanco{
@@ -120,19 +134,21 @@
 				box-shadow: 0px 0px 55px white inset;
 			}
 			.verde:hover{
-				color: #38761d !important;
+				color: #fff !important;
 				text-decoration: none !important;
 			}
 			.amarillo:hover{
-				color: #184b5e !important;
+				color: #fff !important;
 				text-decoration: none !important;
+				
+				margin-right: 0px;
 			}
 			.morado:hover{
-				color: #674ea7 !important;
+				color: #fff !important;
 				text-decoration: none !important;
 			}
 			.rojo:hover{
-				color: #652322;
+				color: #fff;
 				text-decoration: none !important;
 			}
 			/*--------------FIN-----------COLORES--------------------------------------------------*/
@@ -210,7 +226,14 @@
 
 			/*-------------------------TEXTOS--------------------------------------------------*/
 			h4{
-				color: black;
+				color:#424242;
+				
+			}
+			h4:hover{
+				color: #fff;
+
+				
+				
 			}
 			.textos{
 				/*evaluaciones empleados*/
@@ -419,7 +442,10 @@
             	bottom: 0;
             	left: 0;
             	right: 0;
-            	height: 8%;
-            	background: #184b5e;
+            	height: 6%;
+            	background:#22859F;
             	z-index: 10071;
+            box-shadow:1px 2px 16px -1px rgba(0,0,0,0.75);
             }
+
+         
